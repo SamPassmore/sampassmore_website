@@ -1,0 +1,39 @@
+---
+title: ""
+about:
+  template: trestles
+  image: files/avatar.jpg
+  links:
+    - icon: globe
+      text: Web
+      href: https://www.sampassmore.com
+    - icon: github
+      text: Github
+      href: https://github.com/sampassmore
+    - text: "Bluesky {{< fa brands bluesky >}}"
+      icon: fa-brands fa-bluesky
+      href: https://bsky.app/profile/sampassmore.bsky.social
+    - text: "Google Scholar {{< fa brands google-scholar >}}"
+      href: https://scholar.google.com.au/citations?user=zrjq62QAAAAJ&hl=en
+    - text: "ORCID {{< fa brands orcid >}}"
+      href: https://orcid.org/0000-0002-5302-356X
+comments: false
+---
+
+<!-- # see here for the icon setup  -->
+<!-- # https://forum.posit.co/t/overwriting-bootstrap-icons-in-quarto/195804/2 -->
+
+```{r, echo=FALSE, eval = TRUE}
+# Based on: https://blog.djnavarro.net/posts/2022-04-20_porting-to-quarto/#netlify-redirects
+# lines to insert to a netlify _redirect file
+redirects <- paste0("/talk /presentations \n/talks /presentations \n/post /posts")
+# write the _redirect file
+writeLines(redirects, here::here("_site", "_redirects"))
+```
+
+I am currently a Post-doctoral Research Fellow with the [Evolution of Cultural Diversity Initiative](https://evolutionofculturaldiversity.anu.edu.au/), within the [College of Asia and the Pacific](https://asiapacific.anu.edu.au/), at the [Australian National Univeristy (ANU)](https://www.anu.edu.au/).
+
+My research is in the area of quantitative approaches to anthropological and linguistic questions surrounding Kinship, usually through an evolutionary lense. 
+
+This website contains [a short bio](about.qmd) and as well as [blog posts](posts.qmd), [presentations](presentations.qmd), and [various tools and resources related to teaching and research](projects.qmd).
+

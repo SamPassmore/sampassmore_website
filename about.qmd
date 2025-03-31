@@ -1,0 +1,27 @@
+---
+title: "Sam Passmore - Brief professional bio"
+comments: false
+---
+
+### Current position
+
+I am currently a Post-doctoral Research Fellow with the [Evolution of Cultural Diversity Initiative](https://evolutionofculturaldiversity.anu.edu.au/), within the [College of Asia and the Pacific](https://asiapacific.anu.edu.au/), at the [Australian National Univeristy (ANU)](https://www.anu.edu.au/).
+
+### Research focus
+
+My research focuses on data analytics, statistical inference, and computational modeling, particularly in the context of infectious diseases. I use different types of statistical and machine learning approaches to analyze data. My preferred statistical framework is Bayesian, but I adjust as needed. I also develop mechanistic computational models, often based on ordinary differential equations, to investigate the dynamics of the systems I study. These models can help evaluate the impact of drugs and vaccines and other interventions on the dynamics of infections. The ultimate aim of my work is to contribute to the development of more effective interventions and control strategies, both on the level of individuals as well as the population.
+
+ 
+<!-- My work covers both the individual level (the immunology, virology, microbiology scale) and the population level (the epidemiology, ecology, evolution scale).  -->
+
+Descriptions of some current research projects can be found [on my research group website](https://handelgroup.uga.edu/). Slides for recent talks and presentations are located on this website and [can be found here](presentations.qmd).
+
+
+### Previous positions
+
+In 2021, I worked for [Associate Professor Patrick Savage](https://patrickesavage.wordpress.com/) as part of the [CompMusic Lab](https://sites.google.com/view/comp-music-lab/home), at [Keio University](https://www.sfc.keio.ac.jp/en/) in Fujisawa, Japan, and in 2020 I breifly worked for [Russell Gray](https://www.mpg.de/14978299/evolutionary-anthropology-gray), at the Max Planck Institute for the Science of Human History, in Jena, Germany. 
+
+Between 2016 and 2020, I completed my PhD with [Professor Fiona Jordan](https://www.bristol.ac.uk/people/person/Fiona-Jordan-ff4820d0-9a45-487d-83d6-f14c30bfde34/), as part of the [excd.lab](https://excd.org/) in the [Department of Anthropology and Archaeology](https://www.bristol.ac.uk/archanth/), at the [University of Bristol](https://www.bristol.ac.uk/), United Kingdom, and in 2014 I completed a Masters degree with [Professor Quentin Atkinson](https://www.quentinatkinson.com/) in the [School of Psychology](https://www.auckland.ac.nz/en/science/about-the-faculty/school-of-psychology.html), at the [University of Auckland](https://www.auckland.ac.nz/en.html), New Zealand. 
+
+Between my Master's and Phd, I was a Data Scientist at [Pingar International](https://www.pingar.com/). 
+
