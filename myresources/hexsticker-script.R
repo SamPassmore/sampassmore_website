@@ -18,9 +18,9 @@ plot(p1)
 
 #building sticker myself using the individual building block functions from hexSticker
 mysticker <- ggplot() + geom_hexagon(size = 2, fill = "#0099cc", color = "#0099cc") +
-                      geom_subview(subview = p1, x=1, y=1, width=1.3, height=1) +
-                      geom_pkgname(package="Andreas\n Handel", x = 1, y = 1, color = "black", family = "sans", size=24) +
-                      geom_url(url = 'www.andreashandel.com',family = 'sans', size = 8) +
+                      # geom_subview(subview = p1, x=1, y=1, width=1.3, height=1) +
+                      geom_pkgname(package="Sam\n Passmore", x = 1, y = 1, color = "black", family = "sans", size=24) +
+                      geom_url(url = 'www.sampassmore.com',family = 'sans', size = 8) +
                       theme_sticker()
 plot(mysticker)
 ggsave(filename=here('assets/images',"icon.png"), plot = mysticker, family = "sans", width = 200, height = 200, units = "mm")

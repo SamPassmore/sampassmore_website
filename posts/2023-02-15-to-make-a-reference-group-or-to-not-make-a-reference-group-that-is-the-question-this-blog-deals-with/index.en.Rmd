@@ -1,0 +1,95 @@
+---
+title: 'To make a reference group, or to not make a reference group, that is the question
+  this blog deals with. '
+author: R package build
+date: '2023-02-15'
+slug: []
+categories: []
+tags: []
+Description: ''
+Tags: []
+Categories: []
+DisableComments: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = 'center') 
+set.seed(123)
+```
+
+When modelling a single categorical variable in linear regression, there are two possibilities. Most commonly, and the default in R, is to estimate the difference between each level of the categorical variable relative to one reference (or baseline) level. This is called reference level coding. The less common alternative is to model each category separately, without a baseline, called level means coding. The choice between these two depends on what hypothesis you want to test, and changes the interpretation of coefficients and p-values. But first, lets understand the difference in what the model coefficients estimate. 
+
+To illustrate this example, imagine we have two societies of people who are known for their musical performance. One society, which we will call society A, is known for their preference for singing together, or group singing. As an example of group singing, we might think of the grand and unified choruses [found in Samoa](https://theglobaljukebox.org/#?share=Samoa_Female-and-Male-Chorus-Sing-Modern-Melody). 
+
+In the second society, society B, most songs only involve one singer, or solo singing. For an example of solo singing, consider the vivid tales told by solo singers [throughout the British Isles](https://theglobaljukebox.org/#?share=Ulster_The-Bold-English-Navvy). 
+
+Between these two fake societies, both groups perform group singing and solo singing, but 8 out of 10 songs from A are group singing, but only 2 from 10 within B.
+
+```{r}
+df = data.frame(group = rep(c("A", "B"), each = 10),
+                singing = c(rep(0:1, times = c(2, 8)),
+                            rep(0:1, times = c(8, 2))))
+```
+
+If we run the model with an intercept we will be using reference level coding. Group A will become the reference level to which other groups are compared. The intercept will be the ratio of group and solo songs, and the coefficient will tell us how different society B is from society A. If the model is run without an intercept, then we are performing level means coding, and the coefficients will estimate the ratio of group singing songs to solo singing within each society. 
+
+Let's look at the actual output. `fit.1` contains the formula `singing ~ group`. By default, the modelling function `glm` includes an intercept, and makes the first level of the factor the baseline. So the formula really looks like this: `singing ~ 1 + group`. By default, the baseline factor is the first in the alphabet, society A. 
+
+```{r messages = FALSE}
+fit.1 = glm(singing ~ group, 
+             data = df, 
+           family = "binomial")
+```
+
+In the second model the formula is `singing ~ 0 + group`. The part of the formula `0 +`  specifically tells the modelling function to have no intercept, and model each category as a seperate level. 
+
+```{r messages = FALSE}
+fit.2 = glm(singing ~ 0 + group,
+            data = df, 
+            family = "binomial")
+```
+
+Let's check the coefficients do what we think. 
+
+Since we use a logistic regression, the raw coefficients are in log odds. To get the odds ratio, we exponentiate the results. Remember, society A has 2 songs which are sung by soloists, and 8 songs which are sung by a group, so society A's ratio is `8/2 = 4`. Society B has the reverse, 2 songs sung in a group and 8 songs sung by soloists, `2/8 = 0.25`. 
+
+
+```{r}
+### The True ratios 
+# Within each society
+ratios = tapply(df$singing, df$group, function(x) sum(x==1)/sum(x==0))
+ratios
+# The ratio between ratios 
+ratios[2] / ratios[1]
+```
+
+To see if the model is estimating correctly, we compare the true ratios above, to the model coefficients. The first model should show the ratio of the baseline society as the intercept, society A = 4, and difference in ratios between groups as the coefficient. The second should return the ratios within each society, 4 for society A, and 0.25 for society B. That is, 4 / 0.25 = 0.0625. 
+
+```{r}
+### Model Estimates of the ratios 
+# Ratio of the baseline group and the difference between groups
+exp(coef(fit.1))
+# Group A is the baseline and intercept
+exp(coef(fit.1)[1]) 
+
+# Group B is the baseline + the differences between groups
+exp(coef(fit.1)[1] + coef(fit.1)[2]) 
+
+# Difference between Group A and Group B 
+exp(coef(fit.1)[2]) 
+```
+
+The model with no intercept returns the estimated ratios for each society. 
+
+```{r}
+# Ratios within each group
+exp(coef(fit.2))
+```
+
+## Should I use a reference group or not? 
+
+The choice between having a reference group or not depends on the hypothesis you want to test, and importantly changes the interpretation of the coefficent p-values. Let's consider the two hypotheses based on our fictional group singing vs solo singing data. 
+
+If we use a reference group, we have one coefficient estimating the difference in ratios between society A and society B. The p-value for the intercept in this model is testing whether the ratio of group singing to solo singing _in the reference group_ is different from 0. The p-value for the coefficient is testing the hypotheses "Is this society B the same, or different from society A". 
+
+The p-values in a model without a reference group (that is, with no intercept), then the all the p-values are testing the hypotheses that the ratio of group singing to solo singing is not zero. 

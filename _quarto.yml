@@ -51,8 +51,6 @@ website:
         file: about.qmd
       - text: "Posts"
         file: posts.qmd
-      - text: "Presentations"
-        file: presentations.qmd
       - text: "Projects"
         file: projects.qmd
   page-footer:

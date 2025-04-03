@@ -1,0 +1,57 @@
+---
+title: "Journal Impact Factor & Google Scholar"
+author: "Sam Passmore"
+date: '2023-09-27'
+slug: []
+categories: []
+tags: []
+Description: ''
+Tags: []
+Categories: []
+DisableComments: no
+---
+
+```{r echo=FALSE}
+options(kableExtra.html.bsTable = TRUE)
+```
+
+
+I am currently writing a grant, and grant agencies are very interested in Journal Impact Factors (IF). Sometimes this might be explicit, but in this case I just want to flag the journals I have published in that are the most well known and IF seems to be a good indicator of this. I am not very interested in IF, and so I am not really sure which of my publications are in good places, and which of them are not. So, here is an attempt to automate figuring out which of my publications are in high impact factor places using a combination of Google Scholar and Journal Citation Reports (JCR).
+
+First, I can use the scholar package in R to download all my published articles. This will create a dataframe where each row is a paper, and there are some columns describing that paper, like the title, authors, and most importantly, the journal.
+
+```{r message=FALSE, warning=FALSE}
+library(knitr)
+library(dplyr)
+library(scholar)
+
+# My scholar ID
+id = 'zrjq62QAAAAJ'
+
+# Get my publications (a data frame)
+publications = get_publications(id)
+
+publications[,c("title", "author", "journal", "year", "cites")] %>% 
+  head(.) %>% 
+  kable(.)
+```
+
+Then, I can also use a lesser known package called JCRImpactFactor, to cross-reference the journals I have published in with their Impact Factor as recorded in this package. This package only contains the Impact Factor values up to 2019, but that will do for my purposes.
+
+```{r warning=FALSE, message=FALSE}
+library(JCRImpactFactor)
+
+# Find impact factors
+journals = find.IF.JCR(publications$journal, year = 2019) 
+
+# I have published in some journals more than once, so remove duplicates
+journals = journals[!duplicated(journals$Full.Journal.Title),]
+
+journals %>% 
+  arrange(desc(IF2019)) %>%
+  kable(., row.names = FALSE)
+```
+
+It is worth noting that not all Journals have Impact factors recorded by JCR. Notably, this database contains no information on: The Journal of Language Evolution (IF = 2.25), Evolutionary Human Sciences (2.53), Biological Theory (1.14), or Religion, Brain, and Behavior (1.25).
+
+So, in the end it was relatively straightforward to automate, although it doesn't give perfect results. If anyone knows of a more up-to-date location for Journal Impact Factors, let me know!

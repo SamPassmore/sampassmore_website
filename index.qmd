@@ -31,9 +31,11 @@ redirects <- paste0("/talk /presentations \n/talks /presentations \n/post /posts
 writeLines(redirects, here::here("_site", "_redirects"))
 ```
 
+Hi! I'm Dr Sam Passmore, and you have found my website!  
+
 I am currently a Post-doctoral Research Fellow with the [Evolution of Cultural Diversity Initiative](https://evolutionofculturaldiversity.anu.edu.au/), within the [College of Asia and the Pacific](https://asiapacific.anu.edu.au/), at the [Australian National Univeristy (ANU)](https://www.anu.edu.au/).
 
-My research is in the area of quantitative approaches to anthropological and linguistic questions surrounding Kinship, usually through an evolutionary lense. 
+I use quantitative approaches to research anthropological and linguistic questions surrounding kinship, usually through an evolutionary lens. 
 
 This website contains [a short bio](about.qmd) and as well as [blog posts](posts.qmd), [presentations](presentations.qmd), and [various tools and resources related to teaching and research](projects.qmd).
 
