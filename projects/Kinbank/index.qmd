@@ -1,4 +1,85 @@
 ---
-title: "Kinbank"
+title: "Diversity of kinship terminology and Kinbank"
 editor: visual
 ---
+
+Kinship terminology are a small set of words use to designate different categories of kin, such a *mother*, *father*, or *cousin* in English or \[another language example\].
+This small set of words have attracted immense interest in anthropology, linguistics, and cognitive science, because of they way they intersect the social organisation of family, and the biological constraints of reproduction.
+
+My interest in kinship terminology sits across many domains.
+First and foremost I am interested in the diversity of kinship terminology, and what that might tell us about the diversity of kinship systems.
+Although kinship can be theoretically organised in many ways, we tend to see some structures that appear repeatedly across the globe.
+For example, if we consider the relatives elder brother, younger brother, elder sister, and younger sister, as well as whether the person speaking is a man or women (an important part of kinterms in many languages), we have 16 possible categories of kin.
+These 16 categories can be organised 4,140 possible ways.
+Of these, we observe many fewer organisations, with some proposing there are only around 12 'primary' types of sibling systems.
+Why and what causes such restriction in the variation of kinship terms is one of my core research questions.
+
+[![](images/logo.png){fig-align="center"}](www.kinbank.net)
+
+As part of the study of kinship terminology diversity, I helped develop the database [KinBank](http://www.kinbank.net).
+KinBank is a CLDF structured database containing kinship terminology for over 1,200 languages.
+The data is stored on [github](http://www.github.com/kinbank/kinbank), and there is an interactive website to explore the data at [kinbank.net](http://www.kinbank.net).
+Kinbank is part of a larger ERC project, lead by [Professor Fiona Jordan](https://excd.org/bio-2/), called VariKin.
+
+Another interest I have in kinship terminology is whether patterns of borrowed kinship terms are indicative of genetic histories.
+While kinterms are often considered a slow changing lexical domain, there is considerable evidence that kinterms a [routinely borrowed between languages](https://brill.com/view/journals/jlc/15/3-4/article-p562_004.xml).
+Borrowing of words, in general, is usually caused by some form of contact between speakers of each langauges.
+The borrowing (or sharing) of kinterms, would seem to be more likely the result of sustained contact through marriage practices.
+In particular, the types of borrowings that occur might be indicative of different types of contact.
+Sharing words for lineal relatives, like mother or father, might indicate a strong and long relationship between two groups, whereas shared words for affines, like wife or husband, might be indicative of a mutual but seperate relationship between groups.
+By combining population genetic and phylogenetic models of the genetic histories, with the connections between languages based on kinterm borrowings, we can identify
+
+I have been awarded a small grant, the Asia-Pacific Innovations Program, to collect a focused set of kinship terminology explore this avenue further in the context of South New Guinea.
+
+[Publications]{.underline}
+
+Passmore, S., Barth, W., Greenhill, S. J., Quinn, K., Sheard, C., Argyriou, P., Birchall, J., Bowern, C., Calladine, J., Deb, A., Diederen, A., Metsäranta, N. P., Araujo, L. H., Schembri, R., Hickey-Hall, J., Honkola, T., Mitchell, A., Poole, L., Rácz, P. M., … Jordan, F. M.
+(2023).
+Kinbank: A global database of kinship terminology.
+*PLOS ONE*, *18*(5), e0283218.
+<https://doi.org/10.1371/journal.pone.0283218>
+
+Passmore, S., Barth, W., Quinn, K., Greenhill, S. J., Evans, N., & Jordan, F. M.
+(2021).
+Kin Against Kin: Internal Co-selection and the Coherence of Kinship Typologies.
+*Biological Theory*.
+<https://doi.org/10.1007/s13752-021-00379-6>
+
+Passmore, S., & Jordan, F. M.
+(2020).
+No universals in the cultural evolution of kinship terminology.
+*Evolutionary Human Sciences*, *2*, e42.
+doi:10.1017/ehs.2020.41
+
+Rácz, P., Passmore, S., & Jordan, F. M.
+(2019).
+Social Practice and Shared History, Not Social Scale, Structure Cross-Cultural Complexity in Kinship Systems.
+*Topics in Cognitive Science*, *12*(2), 744–765.
+<https://doi.org/10.1111/tops.12430>
+
+Rácz, P., Passmore, S., Sheard, C., & Jordan, F. M.
+(2019).
+Usage frequency and lexical class determine the evolution of kinship terms in Indo-European.
+*Royal Society Open Science*, *6*(10), 191385.
+<https://doi.org/10.1098/rsos.191385>
+
+Passmore, S.
+(2019).
+Kinship Distinctions According to Generation.
+In *Encyclopedia of Evolutionary Psychological Science* (pp. 1–2).
+Springer, Cham.
+<https://doi.org/10.1007/978-3-319-16999-6_1505-1>
+
+Passmore, S.
+(2021a).
+Ego-Centered Kin Terminology.
+In *Encyclopedia of Evolutionary Psychological Science* (pp. 2303–2304).
+Springer, Cham.
+<https://doi.org/10.1007/978-3-319-19650-3_1503>
+
+Passmore, S.
+(2021b).
+Kinship Distinctions According to Sex.
+In *Encyclopedia of Evolutionary Psychological Science* (pp. 4417–4418).
+Springer, Cham.
+<https://doi.org/10.1007/978-3-319-19650-3_1504>

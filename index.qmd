@@ -26,7 +26,7 @@ comments: false
 ```{r, echo=FALSE, eval = TRUE}
 # Based on: https://blog.djnavarro.net/posts/2022-04-20_porting-to-quarto/#netlify-redirects
 # lines to insert to a netlify _redirect file
-redirects <- paste0("/talk /presentations \n/talks /presentations \n/post /posts")
+redirects <- paste0("/talk /presentations \n/talks \n/post /posts")
 # write the _redirect file
 writeLines(redirects, here::here("_site", "_redirects"))
 ```
@@ -37,5 +37,5 @@ I am currently a Post-doctoral Research Fellow with the [Evolution of Cultural D
 
 I use quantitative approaches to research anthropological and linguistic questions surrounding kinship, usually through an evolutionary lens. 
 
-This website contains [a short bio](about.qmd) and as well as [blog posts](posts.qmd), [presentations](presentations.qmd), and [various tools and resources related to teaching and research](projects.qmd).
+This website contains [a short bio](about.qmd), [blog posts](posts.qmd), and [descriptions of my various research interests](projects.qmd).
 
