@@ -1,0 +1,19 @@
+---
+title: "Documenting Three Pacific Creoles"
+editor: visual
+---
+
+![](images/3flag.png){fig-align="center"}
+
+The wider Pacific is home to hundreds of languages, that reflect the multiple expansions of humans into the region.
+However, the increasing connectivity across linguistic borders has seen the rise in lingua franca within states across the region.
+Three languages have seen particularly rapid expansion: Tok Pisin in Papua New Guinea, Solomon Island Pijin in the Solomon Islands, and Bislama, in Vanuatu.
+
+Each of the languages have spread quickly across many linguistic boundaries, creating new and large second-language speaker populations, and are increasingly becoming first-languages within their home states.
+Tok Pisin has between 3–5 million speakers, including 500,000 first language speakers, over 300,000 Solomon Island Pijin speakers (\~25,000 first-language speakers), while around 318,000 Ni-Vanuatu speak Bislama.
+
+This project will build large corpora for each of the languages, creating a platform for a significant expansion of linguistic research in this region, including research in the sociophonetic variation across the region, and the creation of language tools such as forced alignment and automatic translation.
+
+This project is led by the team of Danielle Barth, Bethwyn Evans, Nicholas Evans, and Nick Theiberger, supported by the post-doctoral team of Lila San-Roque, Kirsty Gillespie, and myself, and research assistants Kira Davey, Saurabh Nath, and Keria Mullan.
+
+This research is supported by the Commonwealth of Australia.
