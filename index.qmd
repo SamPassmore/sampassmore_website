@@ -10,13 +10,16 @@ about:
     - icon: github
       text: Github
       href: https://github.com/sampassmore
-    - text: "Bluesky {{< fa brands bluesky >}}"
-      icon: fa-brands fa-bluesky
+    - icon: bluesky
+      text: "{{< fa brands bluesky >}} Bluesky"
       href: https://bsky.app/profile/sampassmore.bsky.social
-    - text: "Google Scholar {{< fa brands google-scholar >}}"
+    - text: "{{< fa brands google-scholar >}} Google Scholar"
       href: https://scholar.google.com.au/citations?user=zrjq62QAAAAJ&hl=en
-    - text: "ORCID {{< fa brands orcid >}}"
+    - text: "{{< fa brands orcid >}} ORCID"
       href: https://orcid.org/0000-0002-5302-356X
+    - icon: linkedin
+      text: linkedin
+      href: https://www.linkedin.com/in/sam-passmore
 comments: false
 ---
 

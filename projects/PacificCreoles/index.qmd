@@ -17,3 +17,19 @@ This project will build large corpora for each of the languages, creating a plat
 This project is led by the team of Danielle Barth, Bethwyn Evans, Nicholas Evans, and Nick Theiberger, supported by the post-doctoral team of Lila San-Roque, Kirsty Gillespie, and myself, and research assistants Kira Davey, Saurabh Nath, and Keria Mullan.
 
 This research is supported by the Commonwealth of Australia.
+
+[Publications]{.underline}
+
+Sam Passmore, Lila San Roque, Kirsty Gillespie, Saurabh Nath, Kira Davey, Keira Mullan, Tim Cawley, Jennifer Biggs, Rosey Billington, Bethwyn Evans, Nick Thieberger, and Danielle Barth.
+2025.
+[English-based acoustic models perform well in the forced alignment of two English-based Pacific Creoles](https://aclanthology.org/2025.acl-long.1505/).
+In *Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)*, pages 31172–31183, Vienna, Austria.
+Association for Computational Linguistics.
+
+[Publicly Available Datasets]{.underline}
+
+Tok Pisin: <https://catalog.paradisec.org.au/collections/3PAC1>
+
+Solomon Island Pijin: <https://catalog.paradisec.org.au/collections/3PAC2>
+
+Bislama: [https://catalog.paradisec.org.au/repository/3PAC3](https://catalog.paradisec.org.au/collections/3PAC3)

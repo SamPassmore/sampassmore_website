@@ -3,6 +3,8 @@ title: "Diversity of kinship terminology and Kinbank"
 editor: visual
 ---
 
+![](images/genealogy-header.png)
+
 Kinship terminology are a small set of words use to designate different categories of kin, such a *mother*, *father*, or *cousin* in English or \[another language example\].
 This small set of words have attracted immense interest in anthropology, linguistics, and cognitive science, because of they way they intersect the social organisation of family, and the biological constraints of reproduction.
 

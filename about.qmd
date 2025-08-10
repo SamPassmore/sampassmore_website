@@ -10,7 +10,7 @@ I currently work across two projects, both based within the [College of Asia and
 ### Research focus
 
 My research focuses on the application statistical inference and computational modelling to anthropological
-or linguistic data and questions. I use a variety of data driven approaches to analyze data from the humanities, with a focus on building a quantitative understanding of diversity. I use a vareity of statistical approaches to do this, including phylogenetics, machine-learning, and autoregressive regression models. I am particularly interested in the relationship between statistics and their assumptions and how they relate to the mechanics of the real world. Generally, I take an evolutionary approach to my research, which could also be labelled as cultural evolution. 
+or linguistic data and questions. I use data driven approaches to analyze data from the humanities, with a focus on building a quantitative understanding of diversity. I have used a range statistical approaches to do this, including phylogenetics, machine-learning, and autoregressive regression models. I am particularly interested in the relationship between statistics and their assumptions and how they relate to the mechanics of the real world. Generally, I take an evolutionary approach to my research, which could also be labelled as cultural evolution. 
 
 Details of the projects I am currently working on can be seen in the [projects page](projects.qmd)
 

@@ -1,0 +1,46 @@
+---
+title: "Musical Diversity and Cultural History"
+editor: visual
+---
+
+::: {style="float: left; margin: 10px;"}
+![](images/clipboard-163285714.png)
+:::
+[The Global Jukebox](https://theglobaljukebox.org/) is a free, interactive online database of coded songs from more than a thousand cultures around the world.
+As well as listening to the songs, you can also analyse them using science to comparing similarities and differences. The concept of The Global Jukebox was conceived by musicologist Alan Lomax long before the current digital technology was available. Led by Dr Anna Lomax-Wood, and A/ Prof. Patrick Savage, this project to digitised the historical collection, making it publicaly available.
+
+There are now over 6,000 songs in the database, but the bigger it is the better it can represent the full diversity of each culture.
+
+My role in the project was to organise, release, and analyse the Cantometrics dataset. Cantometrics is a dataset of 5,776 coded songs from 1,026 societies, and is more than an order of magnitude larger than the largest previously available global datasets. It contains 37 features that cover dimensions of musical style, including: social organization of the performers, rhythm, melody, and ornamentation. You can view the coded data of [Cantometrics on github](https://github.com/theglobaljukebox/cantometrics).
+
+Publications:
+
+Passmore, S., Wood, A. L. C., Barbieri, C., Shilton, D., Daikoku, H., Atkinson, Q. D., & Savage, P. E.
+(2024).
+Global musical diversity is largely independent of linguistic and genetic histories.
+*Nature Communications*, *15*(1), 3964.
+<https://doi.org/10.1038/s41467-024-48113-7>
+
+Passmore, S., & Savage, P. E.
+(2023).
+The Exceptions and the Rules in Global Musical Diversity.
+*Journal of Cognition*, *6*(1), Article 1.
+<https://doi.org/10.5334/joc.312>
+
+Shilton, D., Passmore, S., & Savage, P. E.
+(2023).
+Group singing is globally dominant and associated with social context.
+*Royal Society Open Science*, *10*(9), 230562.
+<https://doi.org/10.1098/rsos.230562>
+
+Wood, A. L. C., Kirby, K. R., Ember, C. R., Silbert, S., Passmore, S., Daikoku, H., McBride, J., Paulay, F., Flory, M. J., Szinger, J., D’Arcangelo, G., Bradley, K. K., Guarino, M., Atayeva, M., Rifkin, J., Baron, V., Hajli, M. E., Szinger, M., & Savage, P. E.
+(2022).
+The Global Jukebox: A public database of performing arts and culture.
+*PLOS ONE*, *17*(11), e0275469.
+<https://doi.org/10.1371/journal.pone.0275469>
+
+Savage, P. E., Passmore, S., Chiba, G., Currie, T. E., Suzuki, H., & Atkinson, Q. D.
+(2022).
+Sequence alignment of folk song melodies reveals cross-cultural regularities of musical evolution.
+*Current Biology*.
+<https://doi.org/10.1016/j.cub.2022.01.039>
