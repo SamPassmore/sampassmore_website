@@ -1,0 +1,42 @@
+[
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/Kinbank/index.html",
+      "/projects/PacificCreoles/index.html",
+      "/projects/NewGuinea/index.html",
+      "/projects/GlobalJukeBox/index.html"
+    ]
+  },
+  {
+    "listing": "/presentations.html",
+    "items": [
+      "/presentations/2025-presentationtest/index.html"
+    ]
+  },
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/2024-08-13-review-tracking/index.en.html",
+      "/posts/2024-05-20-musical-history/index.html",
+      "/posts/2023-11-09-understanding-ordinal-models/index.en.html",
+      "/posts/2023-09-27-journal-impact-factor-google-scholar/index.en.html",
+      "/posts/2023-08-21-talks-in-shandong-and-korea/index.en.html",
+      "/posts/2023-07-07-kinbank-a-database-of-kinship-terminology/index.en.html",
+      "/posts/2023-05-16-cultural-evolution-society-ace-ecr-awards/index.en.html",
+      "/posts/2023-05-16-dap-workshop/index.en.html",
+      "/posts/2023-04-26-abc-canberra-language-diversity-and-endangerment/index.en.html",
+      "/posts/2023-04-10-synapse-seminar/index.en.html",
+      "/posts/2023-02-10-ancestral-state-reconstruction-with-inla/index.html",
+      "/posts/2023-02-15-to-make-a-reference-group-or-to-not-make-a-reference-group-that-is-the-question-this-blog-deals-with/index.en.html",
+      "/posts/2022-07-15-phylogenetic-signal-in-inla/index.html",
+      "/posts/2022-11-29-the-global-jukebox/index.html",
+      "/posts/2022-10-11-funding-in-australia-and-new-zealand/index.html",
+      "/posts/2022-07-15-phylogenetic-signal-in-inla/index.html",
+      "/posts/galtons-problem.html",
+      "/posts/bayestraitr.html",
+      "/posts/cultured-scene.html",
+      "/posts/deep-ancestry-news.html"
+    ]
+  }
+]
