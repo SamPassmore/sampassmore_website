@@ -3,7 +3,7 @@ title: Page Not Found
 comments: false
 ---
 
-We are sorry, the  page you requested cannot be found. 
+Sumimasorry! the  page you requested cannot be found. 
 
 This page was recently updated, it is possible a link changed. 
 
