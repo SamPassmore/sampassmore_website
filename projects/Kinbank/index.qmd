@@ -5,7 +5,7 @@ editor: visual
 
 ![](images/genealogy-header.png)
 
-Kinship terminology are a small set of words use to designate different categories of kin, such a *mother*, *father*, or *cousin* in English or \[another language example\].
+Kinship terminology are a small set of words use to designate different categories of kin, such a *mother*, *father*, or *cousin* in English or *ngamathu* and *marrkathu* in Kayardild.
 This small set of words have attracted immense interest in anthropology, linguistics, and cognitive science, because of they way they intersect the social organisation of family, and the biological constraints of reproduction.
 
 My interest in kinship terminology sits across many domains.
@@ -21,14 +21,14 @@ Why and what causes such restriction in the variation of kinship terms is one of
 As part of the study of kinship terminology diversity, I helped develop the database [KinBank](http://www.kinbank.net).
 KinBank is a CLDF structured database containing kinship terminology for over 1,200 languages.
 The data is stored on [github](http://www.github.com/kinbank/kinbank), and there is an interactive website to explore the data at [kinbank.net](http://www.kinbank.net).
-Kinbank is part of a larger ERC project, lead by [Professor Fiona Jordan](https://excd.org/bio-2/), called VariKin.
+KinBank is part of a larger ERC project, lead by [Professor Fiona Jordan](https://excd.org/bio-2/), called VariKin.
 
 Another interest I have in kinship terminology is whether patterns of borrowed kinship terms are indicative of genetic histories.
 While kinterms are often considered a slow changing lexical domain, there is considerable evidence that kinterms a [routinely borrowed between languages](https://brill.com/view/journals/jlc/15/3-4/article-p562_004.xml).
 Borrowing of words, in general, is usually caused by some form of contact between speakers of each langauges.
 The borrowing (or sharing) of kinterms, would seem to be more likely the result of sustained contact through marriage practices.
 In particular, the types of borrowings that occur might be indicative of different types of contact.
-Sharing words for lineal relatives, like mother or father, might indicate a strong and long relationship between two groups, whereas shared words for affines, like wife or husband, might be indicative of a mutual but seperate relationship between groups.
+Sharing words for lineal relatives, like mother or father, might indicate a strong and long relationship between two groups, whereas shared words for affines, like wife or husband, might be indicative of a mutual but separate relationship between groups.
 By combining population genetic and phylogenetic models of the genetic histories, with the connections between languages based on kinterm borrowings, we can identify
 
 I have been awarded a small grant, the Asia-Pacific Innovations Program, to collect a focused set of kinship terminology explore this avenue further in the context of South New Guinea.
