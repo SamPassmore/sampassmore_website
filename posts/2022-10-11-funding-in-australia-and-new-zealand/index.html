@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="R package build">
-<meta name="dcterms.date" content="2023-02-15">
+<meta name="author" content="Sam Passmore">
+<meta name="dcterms.date" content="2022-10-11">
 <meta name="description" content="Andreas Handel personal website.">
 
-<title>Sam Passmore - To make a reference group, or to not make a reference group, that is the question this blog deals with.</title>
+<title>Sam Passmore - Funding in Australia and New Zealand</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -162,10 +128,6 @@ cookieconsent.run({
 <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../presentations.html"> 
-<span class="menu-text">Presentations</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
@@ -186,7 +148,18 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#should-i-use-a-reference-group-or-not" id="toc-should-i-use-a-reference-group-or-not" class="nav-link active" data-scroll-target="#should-i-use-a-reference-group-or-not">Should I use a reference group or not?</a></li>
+  <li><a href="#new-zealand" id="toc-new-zealand" class="nav-link active" data-scroll-target="#new-zealand">New Zealand</a>
+  <ul class="collapse">
+  <li><a href="#marsden-fund-fast-start-grant" id="toc-marsden-fund-fast-start-grant" class="nav-link" data-scroll-target="#marsden-fund-fast-start-grant">Marsden Fund Fast-Start Grant</a></li>
+  <li><a href="#rutherford-foundation-postdoctorl-fellowship" id="toc-rutherford-foundation-postdoctorl-fellowship" class="nav-link" data-scroll-target="#rutherford-foundation-postdoctorl-fellowship">Rutherford Foundation Postdoctorl Fellowship</a></li>
+  </ul></li>
+  <li><a href="#australia" id="toc-australia" class="nav-link" data-scroll-target="#australia">Australia</a>
+  <ul class="collapse">
+  <li><a href="#decra-discovery-early-career-researcher-award" id="toc-decra-discovery-early-career-researcher-award" class="nav-link" data-scroll-target="#decra-discovery-early-career-researcher-award">DECRA (Discovery Early Career Researcher Award)</a></li>
+  <li><a href="#future-fellowships" id="toc-future-fellowships" class="nav-link" data-scroll-target="#future-fellowships">Future Fellowships</a></li>
+  <li><a href="#westpac-research-fellowship" id="toc-westpac-research-fellowship" class="nav-link" data-scroll-target="#westpac-research-fellowship">Westpac Research Fellowship</a></li>
+  <li><a href="#anu-chl-specific-funding" id="toc-anu-chl-specific-funding" class="nav-link" data-scroll-target="#anu-chl-specific-funding">ANU &amp; CHL specific funding</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -195,7 +168,7 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">To make a reference group, or to not make a reference group, that is the question this blog deals with.</h1>
+<h1 class="title">Funding in Australia and New Zealand</h1>
 </div>
 
 
@@ -205,14 +178,14 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>R package build </p>
+             <p>Sam Passmore </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 15, 2023</p>
+      <p class="date">October 11, 2022</p>
     </div>
   </div>
   
@@ -224,90 +197,60 @@ cookieconsent.run({
 </header>
 
 
-<p>When modelling a single categorical variable in linear regression, there are two possibilities. Most commonly, and the default in R, is to estimate the difference between each level of the categorical variable relative to one reference (or baseline) level. This is called reference level coding. The less common alternative is to model each category separately, without a baseline, called level means coding. The choice between these two depends on what hypothesis you want to test, and changes the interpretation of coefficients and p-values. But first, lets understand the difference in what the model coefficients estimate.</p>
-<p>To illustrate this example, imagine we have two societies of people who are known for their musical performance. One society, which we will call society A, is known for their preference for singing together, or group singing. As an example of group singing, we might think of the grand and unified choruses <a href="https://theglobaljukebox.org/#?share=Samoa_Female-and-Male-Chorus-Sing-Modern-Melody">found in Samoa</a>.</p>
-<p>In the second society, society B, most songs only involve one singer, or solo singing. For an example of solo singing, consider the vivid tales told by solo singers <a href="https://theglobaljukebox.org/#?share=Ulster_The-Bold-English-Navvy">throughout the British Isles</a>.</p>
-<p>Between these two fake societies, both groups perform group singing and solo singing, but 8 out of 10 songs from A are group singing, but only 2 from 10 within B.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">group =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each =</span> <span class="dv">10</span>),</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">singing =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">times =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">8</span>)),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                            <span class="fu">rep</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">times =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">2</span>))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>If we run the model with an intercept we will be using reference level coding. Group A will become the reference level to which other groups are compared. The intercept will be the ratio of group and solo songs, and the coefficient will tell us how different society B is from society A. If the model is run without an intercept, then we are performing level means coding, and the coefficients will estimate the ratio of group singing songs to solo singing within each society.</p>
-<p>Let’s look at the actual output. <code>fit.1</code> contains the formula <code>singing ~ group</code>. By default, the modelling function <code>glm</code> includes an intercept, and makes the first level of the factor the baseline. So the formula really looks like this: <code>singing ~ 1 + group</code>. By default, the baseline factor is the first in the alphabet, society A.</p>
-<div class="cell" data-layout-align="center" data-messages="false">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fit<span class="fl">.1</span> <span class="ot">=</span> <span class="fu">glm</span>(singing <span class="sc">~</span> group, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">data =</span> df, </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">family =</span> <span class="st">"binomial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>In the second model the formula is <code>singing ~ 0 + group</code>. The part of the formula <code>0 +</code> specifically tells the modelling function to have no intercept, and model each category as a seperate level.</p>
-<div class="cell" data-layout-align="center" data-messages="false">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fit<span class="fl">.2</span> <span class="ot">=</span> <span class="fu">glm</span>(singing <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> group,</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> df, </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">family =</span> <span class="st">"binomial"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Let’s check the coefficients do what we think.</p>
-<p>Since we use a logistic regression, the raw coefficients are in log odds. To get the odds ratio, we exponentiate the results. Remember, society A has 2 songs which are sung by soloists, and 8 songs which are sung by a group, so society A’s ratio is <code>8/2 = 4</code>. Society B has the reverse, 2 songs sung in a group and 8 songs sung by soloists, <code>2/8 = 0.25</code>.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### The True ratios </span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Within each society</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ratios <span class="ot">=</span> <span class="fu">tapply</span>(df<span class="sc">$</span>singing, df<span class="sc">$</span>group, <span class="cf">function</span>(x) <span class="fu">sum</span>(x<span class="sc">==</span><span class="dv">1</span>)<span class="sc">/</span><span class="fu">sum</span>(x<span class="sc">==</span><span class="dv">0</span>))</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>ratios</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   A    B 
-4.00 0.25 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The ratio between ratios </span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ratios[<span class="dv">2</span>] <span class="sc">/</span> ratios[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     B 
-0.0625 </code></pre>
-</div>
-</div>
-<p>To see if the model is estimating correctly, we compare the true ratios above, to the model coefficients. The first model should show the ratio of the baseline society as the intercept, society A = 4, and difference in ratios between groups as the coefficient. The second should return the ratios within each society, 4 for society A, and 0.25 for society B. That is, 4 / 0.25 = 0.0625.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Model Estimates of the ratios </span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Ratio of the baseline group and the difference between groups</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(fit<span class="fl">.1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(Intercept)      groupB 
-     4.0000      0.0625 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group A is the baseline and intercept</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(fit<span class="fl">.1</span>)[<span class="dv">1</span>]) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(Intercept) 
-          4 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group B is the baseline + the differences between groups</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(fit<span class="fl">.1</span>)[<span class="dv">1</span>] <span class="sc">+</span> <span class="fu">coef</span>(fit<span class="fl">.1</span>)[<span class="dv">2</span>]) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(Intercept) 
-       0.25 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Difference between Group A and Group B </span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(fit<span class="fl">.1</span>)[<span class="dv">2</span>]) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>groupB 
-0.0625 </code></pre>
-</div>
-</div>
-<p>The model with no intercept returns the estimated ratios for each society.</p>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ratios within each group</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(fit<span class="fl">.2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>groupA groupB 
-  4.00   0.25 </code></pre>
-</div>
-</div>
-<section id="should-i-use-a-reference-group-or-not" class="level2">
-<h2 class="anchored" data-anchor-id="should-i-use-a-reference-group-or-not">Should I use a reference group or not?</h2>
-<p>The choice between having a reference group or not depends on the hypothesis you want to test, and importantly changes the interpretation of the coefficent p-values. Let’s consider the two hypotheses based on our fictional group singing vs solo singing data.</p>
-<p>If we use a reference group, we have one coefficient estimating the difference in ratios between society A and society B. The p-value for the intercept in this model is testing whether the ratio of group singing to solo singing <em>in the reference group</em> is different from 0. The p-value for the coefficient is testing the hypotheses “Is this society B the same, or different from society A”.</p>
-<p>The p-values in a model without a reference group (that is, with no intercept), then the all the p-values are testing the hypotheses that the ratio of group singing to solo singing is not zero.</p>
+<p>To keep track of the various funding opportunities available to me and that I am interested in, I have created this blog page. I am primarily using it for my own purposes, since I keep forgetting when and where things are due, but it might also be useful to other Antipodean early career researchers.</p>
+<p>My PhD was conferred in January 2020.</p>
+<section id="new-zealand" class="level1">
+<h1>New Zealand</h1>
+<section id="marsden-fund-fast-start-grant" class="level2">
+<h2 class="anchored" data-anchor-id="marsden-fund-fast-start-grant"><a href="https://www.royalsociety.org.nz/what-we-do/funds-and-opportunities/marsden/marsden-fund-application-process/submitting-a-proposal/preliminary-proposal-guidelines-for-applicants/">Marsden Fund Fast-Start Grant</a></h2>
+<ul>
+<li><p>Up to seven years after your is PhD conferred</p></li>
+<li><p>I can apply up to 2027</p></li>
+</ul>
+</section>
+<section id="rutherford-foundation-postdoctorl-fellowship" class="level2">
+<h2 class="anchored" data-anchor-id="rutherford-foundation-postdoctorl-fellowship"><a href="https://www.royalsociety.org.nz/what-we-do/funds-and-opportunities/rutherford-foundation/funding-opportunities/new-zealand-postdoctoral-fellowships/">Rutherford Foundation Postdoctorl Fellowship</a></h2>
+<ul>
+<li><p>Up to four years after your is PhD conferred</p></li>
+<li><p>I can apply up to 2024</p></li>
+</ul>
+</section>
+</section>
+<section id="australia" class="level1">
+<h1>Australia</h1>
+<section id="decra-discovery-early-career-researcher-award" class="level2">
+<h2 class="anchored" data-anchor-id="decra-discovery-early-career-researcher-award"><a href="https://www.arc.gov.au/funding-research/funding-schemes/discovery-program/discovery-early-career-researcher-award-decra">DECRA (Discovery Early Career Researcher Award)</a></h2>
+<ul>
+<li>Up to four years after your is PhD conferred : “have an award of PhD date on, or after 1 March 2017”
+<ul>
+<li>I can apply during the 2024 round &amp; 2025 round</li>
+</ul></li>
+</ul>
+</section>
+<section id="future-fellowships" class="level2">
+<h2 class="anchored" data-anchor-id="future-fellowships">Future Fellowships</h2>
+<ul>
+<li>This is aimed at mid-career researchers. I cannot apply until after 2024.</li>
+</ul>
+</section>
+<section id="westpac-research-fellowship" class="level2">
+<h2 class="anchored" data-anchor-id="westpac-research-fellowship"><a href="https://scholars.westpacgroup.com.au/scholarships/research-fellowship/#section3">Westpac Research Fellowship</a></h2>
+<ul>
+<li>This is aimed at mid career researchers. I cannot apply until after 2023.</li>
+</ul>
+</section>
+<section id="anu-chl-specific-funding" class="level2">
+<h2 class="anchored" data-anchor-id="anu-chl-specific-funding">ANU &amp; CHL specific funding</h2>
+<ul>
+<li>Asia Pacific Innovation Program (APIP)</li>
+<li><a href="https://anu365.sharepoint.com/sites/FindFunding/SitePages/ANU-ECR-Travel-Grant.aspx">ANU ECR Travel Grant</a>
+<ul>
+<li>Allowable once every two years</li>
+</ul></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

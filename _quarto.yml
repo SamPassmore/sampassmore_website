@@ -26,7 +26,7 @@ execute:
   warning: false #don't include warnings in the output
   output: true #include the results of executing the code
   cache: false # don't cache code junks by default
-description-meta: "Andreas Handel personal website."
+description-meta: "Sam Passmore personal website."
 editor: 
   markdown: 
     wrap: sentence
@@ -40,7 +40,7 @@ website:
   repo-url: https://github.com/sampassmore/sampassmore_website
   description: "Website of Sam Passmore"
   favicon: /files/icon.png 
-  google-analytics: ""
+  google-analytics: "G-63HEHQ31FH"
   cookie-consent: true    
   search: true
   navbar:
