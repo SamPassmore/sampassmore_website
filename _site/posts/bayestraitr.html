@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sam Passmore">
-<meta name="dcterms.date" content="2018-04-11">
-<meta name="description" content="Andreas Handel personal website.">
+<meta name="dcterms.date" content="2019-06-06">
+<meta name="description" content="Sam Passmore personal website.">
 
-<title>Sam Passmore - Sookias, Passmore, and Atkinson (2018) - News coverage</title>
+<title>Sam Passmore - bayestraitr</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,6 +76,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-63HEHQ31FH"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-63HEHQ31FH', { 'anonymize_ip': true});
+</script>
 
 <script type="text/javascript" charset="UTF-8">
 document.addEventListener('DOMContentLoaded', function () {
@@ -144,21 +153,27 @@ cookieconsent.run({
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#installing" id="toc-installing" class="nav-link active" data-scroll-target="#installing">Installing</a></li>
+  <li><a href="#reading-output-files" id="toc-reading-output-files" class="nav-link" data-scroll-target="#reading-output-files">Reading output files</a></li>
+  <li><a href="#writing-input-files" id="toc-writing-input-files" class="nav-link" data-scroll-target="#writing-input-files">Writing input files</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sookias, Passmore, and Atkinson (2018) - News coverage</h1>
-</div>
-
-<div>
-  <div class="description">
-    News coverage of the Sookias, Passmore, and Atkinson paper
+<h1 class="title">bayestraitr</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Software</div>
   </div>
-</div>
+  </div>
+
 
 
 <div class="quarto-title-meta">
@@ -173,7 +188,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 11, 2018</p>
+      <p class="date">June 6, 2019</p>
     </div>
   </div>
   
@@ -185,21 +200,42 @@ cookieconsent.run({
 </header>
 
 
-<p>A paper I published with Roland Sookias and Quentin Atkinson was covered in the news! Perhaps not the papers I would have chosen, but exciting to see reports on your work in any case. There was coverage by <a href="https://www.thetimes.com/uk/science/article/how-communism-can-leave-health-and-wealth-in-the-red-for-decades-qjhrb7zql">the Times</a> and <a href="https://nypost.com/2018/04/11/science-proves-communism-makes-nations-poorer-and-less-healthy/">the New York Post</a>.</p>
-<p>They didn’t really focus on the right aspects of the paper, which was unfortunate. We wrote this letter in response to the news coverage, but I do not think it was published anywhere except here.</p>
-<p><em>Dear editor,</em></p>
-<p><em>We write to voice our concern regarding your newspaper’s coverage of our recently published research article in the piece „How communism can leave health and wealth in the red for decades” by Oliver Moody (April 11th 2018). We appreciate interest in our work, and the writer was well-informed. However, we would like to make clear that the main finding of our work was not – contra presentation in the article – a negative effect of communism on human development.</em></p>
-<p><em>Our dataset was not sufficient to assess this, and communism was used as a control variable to represent recent, horizontally-transferred culture as opposed to ancestrally inherited culture. We make this very clear in the main text of our article, which is freely accessible online (“Deep cultural ancestry and human development indicators across nation states” Royal Society Open Science, doi:10.1098/rsos.171411). Geography, not “communist” history, was the single best predictor of human development levels we found, and whether due to climate, access to trade, or spread of ideas, geography has far more impact than recent or historical culture on development.</em></p>
-<p><em>Although former nominally “communist” Eurasian countries may have lower human development today, the reasons for this are complex, and in several points which must be born in mind in the context of our study:</em></p>
-<p><em>1. The dictatorial, not socialist, nature of these governments may be responsible, and was not separately tested in our study: state economic involvement, for example, is and was high in Scandinavia, but these countries have outstanding human development indices.</em></p>
-<p><em>2. Economic collapse following the end of communism, rather than communism per se was an important factor in poor human development in much of the former USSR.</em></p>
-<p><em>3. Central Asia and Eastern Europe was less wealthy even prior to communism, and the geography of some of this region (aridity, low access to the sea etc., distance from technological innovation) has almost certainly continued to impede development.</em></p>
-<p><em>4. Some nominally communist governments not included/separately included in our study – e.g.&nbsp;Cuba, the Indian state of Kerala – have exceptionally high human development for their region.</em></p>
-<p><em>Overall, our study was not sufficient, and did not aim to investigate the socioeconomic impact of communism. Our principal finding is that geography and modern culture are more important than inherited “deep” culture in dictating modern human development index values.</em></p>
-<p><em>Yours faithfully,</em></p>
-<p><em>Dr.&nbsp;Roland B. Sookias; Mr.&nbsp;Samuel Passmore; Prof.&nbsp;Quentin D. Atkinson</em></p>
+<p>I’ve been using BayesTraits for the last year or so, and had developed a package to make it easy to create data for BayesTraits and to read the output into R - called bayestraitr.</p>
+<p>The main difference between this package and the existing <a href="http://www.randigriffin.com/projects/btw.html">R-BayesTraits package btw</a> is that my package doesn’t let you interact with BayesTraits in R, only create BayesTraits input, and read BayesTraits output. I found this approach useful because BayesTraits is a constantly evolving software. By only dealing with inputs and outputs, users can interact with the most up-to-date version of BayesTraits, without relying on R packages to update alongside.</p>
+<p>You can check out the code and some more examples on the <a href="https://github.com/SamPassmore/bayestraitr">github page</a>.</p>
+<p>Here I will walk through how to use it!</p>
+<section id="installing" class="level1">
+<h1>Installing</h1>
+<p>To install this package run this line:</p>
+<pre><code>devtools::install_github('SamPassmore/bayestraitr')</code></pre>
+<p>and load with</p>
+<pre><code>library(bayestraitr)</code></pre>
+</section>
+<section id="reading-output-files" class="level1">
+<h1>Reading output files</h1>
+<p>There are three functions in this package at the moment for reading in BayesTrait *.Log files, *.Schedule files, &amp; *.Stones</p>
+<pre><code>log = bt_read.log('./bayestrait_output/Artiodactyl.txt.Log.txt')</code></pre>
+<p>Will return a dataframe of the log matrix. The file header are contained as an attribute which can be accessed by using <code>attributes(log)$settings</code></p>
+<pre><code>schedule = bt_read.schedule('./bayestrait_output/Artiodactyl.txt.Schedule.txt')</code></pre>
+<p>This returns one data.frame with the contents of the Schedule file.</p>
+<pre><code>stones = bt_read.stones('./bayestrait_output/Artiodactyl.txt.Stones.txt')</code></pre>
+<p>This returns a list of 2 items. <code>\$stones_sampling</code> holds the stones sampling, and <code>marginal_likelihood</code> holds the marginal log-likelihood. The stones file header can be found in the attributes by using the code <code>attributes(stones)$settings</code></p>
+</section>
+<section id="writing-input-files" class="level1">
+<h1>Writing input files</h1>
+<p>The function <code>bt_write</code> takes various tree types (e.g.&nbsp;phylo &amp; multiphylo) and data.frame input and writes them as input files for BayesTraits. This means replacing NAs with “-”, removing column headers, and ensuring data files are tab-delimited.</p>
+<p>First, have you data and phylogeny loaded into R</p>
+<pre><code>library(ape)
+tree = read.nexus('bayestraits_output/Artiodactyl.trees')
+data = read.csv('bayestraits_output/Artiodactyl.tsv', sep = "\t")</code></pre>
+<p>As with most phylogenetic software in R, you need to make sure the rows of your dataframe indicate the taxa of the phylogeny they connect to.</p>
+<pre><code>rownames(data) = data$taxa</code></pre>
+<p>Finally, use <code>bt_write</code> to write your BayesTraits input files by indicating the names of your data, tree(s), as well as your variable(s) of interest, and the location and filename for the outputs. This function will save two files, one which holds your data (with the suffix <code>*.btdata</code>) and one which holds your tree(s) (<code>*.bttrees</code>).</p>
+<pre><code>bt_write(tree = tree, data = data, variables = 'trait1', filename = 'test')</code></pre>
+<p>This package is in development, so please log any issues you find while using it! And keep an eye out for new functions!</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
