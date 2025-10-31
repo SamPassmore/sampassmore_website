@@ -23,5 +23,13 @@
       "/posts/cultured-scene.html",
       "/posts/deep-ancestry-news.html"
     ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/Kinbank/index.html",
+      "/projects/PacificCreoles/index.html",
+      "/projects/GlobalJukeBox/index.html"
+    ]
   }
 ]

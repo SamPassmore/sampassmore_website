@@ -32,3 +32,4 @@ In this post I keep track of Journals I have reviewed for, and how often. I've s
 | Anthropos (Book Reviews)                      | 1                   |
 | Journal of the Royal Society Interface        | 1                   |
 | Biology and Philosophy                        | 1                   |
+| Scientific Data                               | 1                   |
