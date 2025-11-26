@@ -1,0 +1,98 @@
+---
+title: "PCA Rotations: What are they"
+author: "Sam Passmore"
+editor: visual
+category: methods
+---
+
+I have been asked a couple of times about the use of rotations in Principle Component Analysis (PCA).
+Each time it is far enough apart that I forget what I said the previous time, so I have written some notes here, with a particular focus on Oblique Minimum rotation.
+
+# What happens in a PCA
+
+The primary use I have seen PCA is to understand latent variation within a dataset.
+That is, when someone has research goal to measure something that is not directly measurable, one way around that is to ask a number of measurable questions and understand how they correlate to get a measure of that underlying factor.
+A principle component analysis identifies what variation is shared amongst theose variables, and loads their variation onto a single component, which is often inferred to be an indreicted measurement of that latent (or immeasurable) variable.
+Equally, in an observed dataset (i.e. a datatset where there was no opportunity to design the questions or structure of the data *a-priori*), it may be the case that there are some set of variables that you might predict 'hang-together' because of some underlying, but not directly measured reason.
+
+This is conceptually why I think people use PCA, but what is actually happening to the numbers?
+First, I will look at this using a simulated dataset, than we can look at how this will work with a real linguistic datatset.
+
+Here is the set up for the simulated data:
+
+Numerically, PCA is derived from a correlation matrix.
+That is, for each variable you are interested in, calculate how they are correlated to each other and put them into a square matri.
+
+Assuming that we have a standardized (the mean is zero for all variables) Principle component analysis are derived from the covariance of the variables in the matrix.
+Let's take a small example, using data from the R package [languageR](https://cran.r-project.org/web/packages/languageR/languageR.pdf).
+We are going to use the datatset '*english*'.
+This data set gives mean visual lexical decision latencies and word naming latencies to 2284 monomorphemic English nouns and verbs, averaged for old and young subjects, with various pre- dictor variables.
+For each word, there is an average latency value for an Old and Young participant.
+I choose this datatset only because I see that it has been used for PCA before.
+Specifically the variables
+
+```{r}
+library(languageR)
+
+data(english)
+head(english)
+
+items = english[english$AgeSubject == "young", c(18:27)]
+
+items.pca = prcomp(items, center = TRUE, scale = TRUE)
+x = as.data.frame(items.pca$rotation[,1:4])
+items$PC1 = items.pca$x[,1]
+items$PC2 = items.pca$x[,2]
+items$PC3 = items.pca$x[,3]
+items$PC4 = items.pca$x[,4]
+items2 = english[english$AgeSubject != "young", ]
+items2$PC1 = items.pca$x[,1]
+items2$PC2 = items.pca$x[,2]
+items2$PC3 = items.pca$x[,3]
+items2$PC4 = items.pca$x[,4]
+english = rbind(items, items2)
+```
+
+```{r}
+library(psych)
+
+# --- Step 1: Create example data with clear 2-factor structure ---
+set.seed(123)
+n <- 200
+F1 <- rnorm(n)
+F2 <- rnorm(n)
+
+# Variables mainly loading on one factor
+V1 <- 0.8*F1 + 0.1*F2 + rnorm(n, 0, 0.2)
+V2 <- 0.7*F1 + 0.2*F2 + rnorm(n, 0, 0.2)
+V3 <- 0.1*F1 + 0.8*F2 + rnorm(n, 0, 0.2)
+V4 <- 0.2*F1 + 0.7*F2 + rnorm(n, 0, 0.2)
+
+df <- data.frame(V1, V2, V3, V4)
+
+# --- Step 2: Compute correlation matrix ---
+R <- cor(df)
+
+# --- Step 3: Factor analysis with 2 factors ---
+fa_unrotated <- fa(df, nfactors = 2, rotate = "none")
+print(fa_unrotated$loadings, cutoff = 0)
+
+# --- Step 4: Varimax rotation (orthogonal) ---
+fa_varimax <- fa(df, nfactors = 2, rotate = "varimax")
+print(fa_varimax$loadings, cutoff = 0)
+
+# --- Step 5: Promax rotation (oblique minimum rotation) ---
+fa_promax <- fa(df, nfactors = 2, rotate = "promax")
+print(fa_promax$loadings, cutoff = 0)
+
+plot(fa_unrotated$scores[,1], fa_unrotated$scores[,2])
+cor(fa_unrotated$scores[,1], fa_unrotated$scores[,2])
+
+plot(fa_varimax$scores[,1], fa_varimax$scores[,2])
+cor(fa_varimax$scores[,1], fa_varimax$scores[,2])
+
+plot(fa_promax$scores[,1], fa_promax$scores[,2])
+cor(fa_promax$scores[,1], fa_promax$scores[,2])
+
+
+```
