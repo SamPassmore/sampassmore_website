@@ -5,20 +5,113 @@ editor: visual
 category: methods
 ---
 
-I have been asked a couple of times about the use of rotations in Principle Component Analysis (PCA).
-Each time it is far enough apart that I forget what I said the previous time, so I have written some notes here, with a particular focus on Oblique Minimum rotation.
+I have been asked a couple of times about the use of rotations in Principal Component Analysis (PCA).
+Each time it is far enough apart that I forget what I said the previous time, so I have written down what I should say here.
 
 # What happens in a PCA
 
-The primary use I have seen PCA is to understand latent variation within a dataset.
-That is, when someone has research goal to measure something that is not directly measurable, one way around that is to ask a number of measurable questions and understand how they correlate to get a measure of that underlying factor.
-A principle component analysis identifies what variation is shared amongst theose variables, and loads their variation onto a single component, which is often inferred to be an indreicted measurement of that latent (or immeasurable) variable.
-Equally, in an observed dataset (i.e. a datatset where there was no opportunity to design the questions or structure of the data *a-priori*), it may be the case that there are some set of variables that you might predict 'hang-together' because of some underlying, but not directly measured reason.
+Conceptually, PCA commonly is to summarise the latent variation within a dataset.
+That is, when we want to measure something that is not directly accessible, a way around that is to ask a number of questions that are measurable and combine them in a way that reflects the underlying thing we do want to measure.
 
-This is conceptually why I think people use PCA, but what is actually happening to the numbers?
-First, I will look at this using a simulated dataset, than we can look at how this will work with a real linguistic datatset.
+A PCA aims to do this mathematically by measuring the correlation between all pairs of variables, then creating new variables based on those correlations and weights of the original variables through an approach called eigenvalue decomposition.
+Variables that are similar weight heavily onto the same principle component, and there can one less principle components as there are variables (a.k.a: n - 1).
+In a standard PCA, which is also described as a varimax rotation[^1], there are two complimentary constraints to the calculation of weights, first is that the weights should maximise the amount of variance explained by the principle components and second is that principle components should be orthogonal, or perfectly uncorrelated with each other.
+Under a varimax rotation, an additional step is to alter the weightings by making large weights bigger, and penalize changes to weights that makes loadings similar across variables.
+This combination priotizes a simpler structure of the Principal components.
 
-Here is the set up for the simulated data:
+[^1]: It is also possible to perform no rotations in PCA, but this is not common and varimax is a common default approach.
+    For example, vairmax is the default option in psych::principal
+
+In most social sciences, assuming that latent variables are uncorrelated is usually a poor assumption.
+Most aspects of human behaviour impact each other in some way, and so we often want to relax this assumption, using alternative rotations, such as Promax (**PRO**jection to **MAX**imise simplicity) and ObliMin (**OBLI**que **MIN**imum).
+But, often we do not have a good understanding of how these approaches vary or differ in their approach to measuring latent variables.
+Let us look at this in a simulated example.
+
+In the simulated example, I start with the end product (two latent factors named `F1` and `F2`), then create four variables from these latent factors (`V1, V2, V3, V4`).
+F1 and F2 have a 0.2 correlation that I have imposed, which is a low but not negligible relationship between latent variables.
+I specify the weights so that `V1` and `V2` are weighted towards `F1` (0.8 and 0.7 respectively), and V3 and V4 are weighted towards `F2` (0.8; 0.7), and add some normally distributed noise to those variables.
+The variables `V1-V4` then sit in a data frame `df` .
+The correlation matrix between each variable shows us that there is a stronger relationship between V1-2 and V3-4 but there is also some relationship across this divided, which is not an uncommon finding in social datasets.
+
+```{r}
+library(psych)
+library(ggplot2)
+library(ggpubr)
+library(GGally)
+
+# --- Step 1: Create example data with clear 2-factor structure ---
+set.seed(123)
+n <- 200
+F1 <- rnorm(n)
+F2 <- F1 * 0.2 + sqrt(1 - 0.2^2) + rnorm(n, 0, 0.75)
+
+# Variables mainly loading on one factor
+V1 <- 0.8*F1 + 0.1*F2 + rnorm(n, 0, 0.2)
+V2 <- 0.7*F1 + 0.2*F2 + rnorm(n, 0, 0.2)
+V3 <- 0.1*F1 + 0.8*F2 + rnorm(n, 0, 0.2)
+V4 <- 0.2*F1 + 0.7*F2 + rnorm(n, 0, 0.2)
+
+df <- data.frame(V1, V2, V3, V4)
+
+round(cor(df), 2)
+```
+
+As mentioned in the description, PCA is based off of a correlation matrix, which is created below in the object `R`, but you can also put the data frame directly into the function `principal`.
+Doing the latter means you will be returned values for each observation in the data frame that reflect the principal components (which is usually what researchers are after).
+
+```{r, message=FALSE, warning=FALSE}
+# Step 2: Compute correlation matrix
+R <- cor(df)
+
+# Step 3: Factor analysis with 2 factors
+pc_varimax = psych::principal(df, nfactors = 2, rotate = "varimax")
+
+print(pc_varimax$loadings, cutoff = 0)
+
+plot_df = data.frame(pc_varimax$scores, F1 , F2)
+
+ggpairs(plot_df)
+```
+
+Looking at the loadings for the variables on the principle components the loadings are matching up about as well as we could hope.
+V1 and V2 load heavily onto RC1 and V2 and V4 on RC2.
+It does not capture the relationship between the latent variables however, showing a correlation of 0 for RC1 and RC2, which is a consequence of the othogonality constraint in varimax rotations.
+What we can be sure of in this approach is that the principle components are independent latent variables, however, in social and human behavioral research, it is more often that latent factors are related in some way - both conceptually and numerically.
+
+As such, we can use different rotations that make adjustments to PCA that relax the orthogonality assumption in order to get more interpretable factors.
+Two common alternative rotations to varimax used in social research is the ProMax and ObliMin rotations.
+
+## ProMax
+
+Promax is an extention of the varimax rotation, that begins with the varimax output and raises the loadings to a power (in addition to the square-square change performed by varimax) .
+By raising the loadings to a power, the strong loadings become larger and the weak loadings get closer to zero.
+The effect of this change is that each variable weights more strongly onto each latent variable, and exaggerates the patterns seen in the latent variable.
+This more significant change to the loadings also makes the latent components correlated, unlike varimax components.
+
+```{r, message=FALSE, warning=FALSE}
+# Step 4: Promax Rotations
+pc_promax = psych::principal(df, nfactors = 2, rotate = "promax")
+
+print(pc_promax$loadings, cutoff = 0)
+
+plot_df = data.frame(pc_promax$scores, F1 , F2)
+ggpairs(plot_df)
+```
+
+The exaggeration of weightings performed by the ProMax rotation further emphasises the weighting between principal components, V1-2 are heavily weighted to RC1 and V3-4 onto RC2, as we expect.
+However, instead of constraining the correlation between latent variables to zero, the Promax approach has over estimated the latent variation between F1 and F2, with a correlation of 0.529.
+
+## ObliMin
+
+```{r, message=FALSE, warning=FALSE}
+# Step 4: Promax Rotations
+pc_oblimin = psych::principal(df, nfactors = 2, rotate = "oblimin")
+
+print(pc_oblimin$loadings, cutoff = 0)
+
+plot_df = data.frame(pc_oblimin$scores, F1 , F2)
+ggpairs(plot_df)
+```
 
 Numerically, PCA is derived from a correlation matrix.
 That is, for each variable you are interested in, calculate how they are correlated to each other and put them into a square matri.
@@ -30,69 +123,3 @@ This data set gives mean visual lexical decision latencies and word naming laten
 For each word, there is an average latency value for an Old and Young participant.
 I choose this datatset only because I see that it has been used for PCA before.
 Specifically the variables
-
-```{r}
-library(languageR)
-
-data(english)
-head(english)
-
-items = english[english$AgeSubject == "young", c(18:27)]
-
-items.pca = prcomp(items, center = TRUE, scale = TRUE)
-x = as.data.frame(items.pca$rotation[,1:4])
-items$PC1 = items.pca$x[,1]
-items$PC2 = items.pca$x[,2]
-items$PC3 = items.pca$x[,3]
-items$PC4 = items.pca$x[,4]
-items2 = english[english$AgeSubject != "young", ]
-items2$PC1 = items.pca$x[,1]
-items2$PC2 = items.pca$x[,2]
-items2$PC3 = items.pca$x[,3]
-items2$PC4 = items.pca$x[,4]
-english = rbind(items, items2)
-```
-
-```{r}
-library(psych)
-
-# --- Step 1: Create example data with clear 2-factor structure ---
-set.seed(123)
-n <- 200
-F1 <- rnorm(n)
-F2 <- rnorm(n)
-
-# Variables mainly loading on one factor
-V1 <- 0.8*F1 + 0.1*F2 + rnorm(n, 0, 0.2)
-V2 <- 0.7*F1 + 0.2*F2 + rnorm(n, 0, 0.2)
-V3 <- 0.1*F1 + 0.8*F2 + rnorm(n, 0, 0.2)
-V4 <- 0.2*F1 + 0.7*F2 + rnorm(n, 0, 0.2)
-
-df <- data.frame(V1, V2, V3, V4)
-
-# --- Step 2: Compute correlation matrix ---
-R <- cor(df)
-
-# --- Step 3: Factor analysis with 2 factors ---
-fa_unrotated <- fa(df, nfactors = 2, rotate = "none")
-print(fa_unrotated$loadings, cutoff = 0)
-
-# --- Step 4: Varimax rotation (orthogonal) ---
-fa_varimax <- fa(df, nfactors = 2, rotate = "varimax")
-print(fa_varimax$loadings, cutoff = 0)
-
-# --- Step 5: Promax rotation (oblique minimum rotation) ---
-fa_promax <- fa(df, nfactors = 2, rotate = "promax")
-print(fa_promax$loadings, cutoff = 0)
-
-plot(fa_unrotated$scores[,1], fa_unrotated$scores[,2])
-cor(fa_unrotated$scores[,1], fa_unrotated$scores[,2])
-
-plot(fa_varimax$scores[,1], fa_varimax$scores[,2])
-cor(fa_varimax$scores[,1], fa_varimax$scores[,2])
-
-plot(fa_promax$scores[,1], fa_promax$scores[,2])
-cor(fa_promax$scores[,1], fa_promax$scores[,2])
-
-
-```

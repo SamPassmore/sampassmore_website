@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Sam Passmore">
 <meta name="description" content="Sam Passmore personal website.">
 
-<title>Sam Passmore - Posts</title>
+<title>Sam Passmore - PCA Rotations: What are they</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,34 +22,66 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href=".//files/icon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../..//files/icon.png" rel="icon" type="image/png">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,35 +109,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-date','listing-reading-time','listing-description','listing-image','listing-image-alt','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-63HEHQ31FH"></script>
 
 <script type="text/plain" cookie-consent="tracking">
@@ -133,37 +137,8 @@ cookieconsent.run({
 </script> 
   
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="files/webex.css">
+<link rel="stylesheet" href="../../files/webex.css">
 </head>
 
 <body class="nav-fixed">
@@ -173,10 +148,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./files/logo.png" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../files/logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Sam Passmore</span>
     </a>
   </div>
@@ -187,15 +162,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -207,24 +182,40 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(21)</span></div><div class="category" data-category="Opinion">Opinion <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Software">Software <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-happens-in-a-pca" id="toc-what-happens-in-a-pca" class="nav-link active" data-scroll-target="#what-happens-in-a-pca">What happens in a PCA</a>
+  <ul class="collapse">
+  <li><a href="#promax" id="toc-promax" class="nav-link" data-scroll-target="#promax">ProMax</a></li>
+  <li><a href="#oblimin" id="toc-oblimin" class="nav-link" data-scroll-target="#oblimin">ObliMin</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Posts</h1>
+<h1 class="title">PCA Rotations: What are they</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sam Passmore </p>
+          </div>
+  </div>
     
   
     
@@ -235,687 +226,166 @@ window.Quarto = {
 </header>
 
 
+<p>I have been asked a couple of times about the use of rotations in Principal Component Analysis (PCA). Each time it is far enough apart that I forget what I said the previous time, so I have written down what I should say here.</p>
+<section id="what-happens-in-a-pca" class="level1">
+<h1>What happens in a PCA</h1>
+<p>Conceptually, PCA commonly is to summarise the latent variation within a dataset. That is, when we want to measure something that is not directly accessible, a way around that is to ask a number of questions that are measurable and combine them in a way that reflects the underlying thing we do want to measure.</p>
+<p>A PCA aims to do this mathematically by measuring the correlation between all pairs of variables, then creating new variables based on those correlations and weights of the original variables through an approach called eigenvalue decomposition. Variables that are similar weight heavily onto the same principle component, and there can one less principle components as there are variables (a.k.a: n - 1). In a standard PCA, which is also described as a varimax rotation<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, there are two complimentary constraints to the calculation of weights, first is that the weights should maximise the amount of variance explained by the principle components and second is that principle components should be orthogonal, or perfectly uncorrelated with each other. Under a varimax rotation, an additional step is to alter the weightings by making large weights bigger, and penalize changes to weights that makes loadings similar across variables. This combination priotizes a simpler structure of the Principal components.</p>
+<p>In most social sciences, assuming that latent variables are uncorrelated is usually a poor assumption. Most aspects of human behaviour impact each other in some way, and so we often want to relax this assumption, using alternative rotations, such as Promax (<strong>PRO</strong>jection to <strong>MAX</strong>imise simplicity) and ObliMin (<strong>OBLI</strong>que <strong>MIN</strong>imum). But, often we do not have a good understanding of how these approaches vary or differ in their approach to measuring latent variables. Let us look at this in a simulated example.</p>
+<p>In the simulated example, I start with the end product (two latent factors named <code>F1</code> and <code>F2</code>), then create four variables from these latent factors (<code>V1, V2, V3, V4</code>). F1 and F2 have a 0.2 correlation that I have imposed, which is a low but not negligible relationship between latent variables. I specify the weights so that <code>V1</code> and <code>V2</code> are weighted towards <code>F1</code> (0.8 and 0.7 respectively), and V3 and V4 are weighted towards <code>F2</code> (0.8; 0.7), and add some normally distributed noise to those variables. The variables <code>V1-V4</code> then sit in a data frame <code>df</code> . The correlation matrix between each variable shows us that there is a stronger relationship between V1-2 and V3-4 but there is also some relationship across this divided, which is not an uncommon finding in social datasets.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Step 1: Create example data with clear 2-factor structure ---</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">200</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>F1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>F2 <span class="ot">&lt;-</span> F1 <span class="sc">*</span> <span class="fl">0.2</span> <span class="sc">+</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span><span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.75</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables mainly loading on one factor</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>V1 <span class="ot">&lt;-</span> <span class="fl">0.8</span><span class="sc">*</span>F1 <span class="sc">+</span> <span class="fl">0.1</span><span class="sc">*</span>F2 <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.2</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>V2 <span class="ot">&lt;-</span> <span class="fl">0.7</span><span class="sc">*</span>F1 <span class="sc">+</span> <span class="fl">0.2</span><span class="sc">*</span>F2 <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.2</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>V3 <span class="ot">&lt;-</span> <span class="fl">0.1</span><span class="sc">*</span>F1 <span class="sc">+</span> <span class="fl">0.8</span><span class="sc">*</span>F2 <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.2</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>V4 <span class="ot">&lt;-</span> <span class="fl">0.2</span><span class="sc">*</span>F1 <span class="sc">+</span> <span class="fl">0.7</span><span class="sc">*</span>F2 <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.2</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(V1, V2, V3, V4)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">cor</span>(df), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     V1   V2   V3   V4
+V1 1.00 0.92 0.38 0.55
+V2 0.92 1.00 0.49 0.65
+V3 0.38 0.49 1.00 0.87
+V4 0.55 0.65 0.87 1.00</code></pre>
+</div>
+</div>
+<p>As mentioned in the description, PCA is based off of a correlation matrix, which is created below in the object <code>R</code>, but you can also put the data frame directly into the function <code>principal</code>. Doing the latter means you will be returned values for each observation in the data frame that reflect the principal components (which is usually what researchers are after).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Compute correlation matrix</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">cor</span>(df)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Factor analysis with 2 factors</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pc_varimax <span class="ot">=</span> psych<span class="sc">::</span><span class="fu">principal</span>(df, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pc_varimax<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Loadings:
+   RC1   RC2  
+V1 0.962 0.210
+V2 0.919 0.344
+V3 0.173 0.963
+V4 0.385 0.891
+
+                 RC1   RC2
+SS loadings    1.947 1.883
+Proportion Var 0.487 0.471
+Cumulative Var 0.487 0.957</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">=</span> <span class="fu">data.frame</span>(pc_varimax<span class="sc">$</span>scores, F1 , F2)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(plot_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Looking at the loadings for the variables on the principle components the loadings are matching up about as well as we could hope. V1 and V2 load heavily onto RC1 and V2 and V4 on RC2.</p>
+<p>are all loaded on <code>PC1</code>, which is not what we think we should see, and that <code>V1-V2</code> and <code>V3-V4</code> are linked to <code>PC2</code> in opposite directions. This is a common outcome for standard/varimax PCA, where the restriction of orthogonality means that variables load onto multiple principle components in a strange and unintuitive way, despite the rotation trying to minimize this possibility. We can see the uncorrelated nature of the variables in the plot below, and a correlation value of ~0. What we can be sure of in this approach is that the principle components are independent latent variables, however, in social and human behavioral research, it is more often that latent factors are related in some way - both conceptually and numerically.</p>
+<p>As such, we can use different rotations that make adjustments to PCA that relax the orthogonality assumption in order to get more interpretable factors. Two common alternative rotations to varimax used in social research is the ProMax and ObliMin rotations.</p>
+<section id="promax" class="level2">
+<h2 class="anchored" data-anchor-id="promax">ProMax</h2>
+<p>Promax is an extention of the varimax rotation, that begins with the varimax output and raises the loadings to a power (in addition to the square-square change performed by varimax) . By raising the loadings to a power, the strong loadings become larger and the weak loadings get closer to zero. The effect of this change is that each variable weights more strongly onto each latent variable, and exaggerates the patterns seen in the latent variable. This more significant change to the loadings also makes the latent components correlated, unlike varimax components.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Promax Rotations</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>pc_promax <span class="ot">=</span> psych<span class="sc">::</span><span class="fu">principal</span>(df, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"promax"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pc_varimax<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Loadings:
+   RC1   RC2  
+V1 0.962 0.210
+V2 0.919 0.344
+V3 0.173 0.963
+V4 0.385 0.891
+
+                 RC1   RC2
+SS loadings    1.947 1.883
+Proportion Var 0.487 0.471
+Cumulative Var 0.487 0.957</code></pre>
+</div>
+</div>
+<p>The exaggeration of weightings performed by the ProMax rotation sees our variables split across the two principal components in a way that our simulated example might</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">=</span> <span class="fu">data.frame</span>(pc_promax<span class="sc">$</span>scores)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_df, <span class="fu">aes</span>(<span class="at">x =</span> RC1, <span class="at">y =</span> RC2)) <span class="sc">+</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_cor</span>(<span class="at">method =</span> <span class="st">"pearson"</span>, <span class="at">label.x =</span> <span class="fl">1.5</span>, <span class="at">label.y =</span> <span class="fl">3.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="oblimin" class="level2">
+<h2 class="anchored" data-anchor-id="oblimin">ObliMin</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Promax Rotations</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pc_oblimin <span class="ot">=</span> psych<span class="sc">::</span><span class="fu">principal</span>(df, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"oblimin"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pc_oblimin<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Loadings:
+   TC1    TC2   
+V1  1.013 -0.061
+V2  0.926  0.102
+V3 -0.088  1.019
+V4  0.170  0.874
+
+                 TC1   TC2
+SS loadings    1.921 1.817
+Proportion Var 0.480 0.454
+Cumulative Var 0.480 0.934</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">=</span> <span class="fu">data.frame</span>(pc_oblimin<span class="sc">$</span>scores)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_df, <span class="fu">aes</span>(<span class="at">x =</span> TC1, <span class="at">y =</span> TC2)) <span class="sc">+</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_cor</span>(<span class="at">method =</span> <span class="st">"pearson"</span>, <span class="at">label.x =</span> <span class="fl">1.5</span>, <span class="at">label.y =</span> <span class="fl">3.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Numerically, PCA is derived from a correlation matrix. That is, for each variable you are interested in, calculate how they are correlated to each other and put them into a square matri.</p>
+<p>Assuming that we have a standardized (the mean is zero for all variables) Principle component analysis are derived from the covariance of the variables in the matrix. Let’s take a small example, using data from the R package <a href="https://cran.r-project.org/web/packages/languageR/languageR.pdf">languageR</a>. We are going to use the datatset ‘<em>english</em>’. This data set gives mean visual lexical decision latencies and word naming latencies to 2284 monomorphemic English nouns and verbs, averaged for old and young subjects, with various pre- dictor variables. For each word, there is an average latency value for an Old and Young participant. I choose this datatset only because I see that it has been used for PCA before. Specifically the variables</p>
 
 
+</section>
+</section>
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1764566640820" data-listing-reading-time-sort="6" data-listing-word-count-sort="1165">
-<div class="thumbnail">
-<p><a href="./posts/2025-12-11-pca-rotations/index.html" class="no-external"></a></p><a href="./posts/2025-12-11-pca-rotations/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2025-12-11-pca-rotations/index_files/figure-html/unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2025-12-11-pca-rotations/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-12-11-pca-rotations/index.html" class="no-external">PCA Rotations: What are they</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2025-12-11-pca-rotations/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/2025-12-11-pca-rotations/index.html" class="no-external">I have been asked a couple of times about the use of rotations in Principal Component Analysis (PCA). Each time it is far enough apart that I forget what I said the previous…</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./posts/2025-12-11-pca-rotations/index.html" class="no-external"></a></p><a href="./posts/2025-12-11-pca-rotations/index.html" class="no-external">
-<div class="listing-reading-time">
-6 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="" data-listing-date-sort="1723471200000" data-listing-file-modified-sort="1761889354183" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="931">
-<div class="thumbnail">
-<p><a href="./posts/2024-08-13-review-tracking/index.en.html" class="no-external"></a></p><a href="./posts/2024-08-13-review-tracking/index.en.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2024-08-13-review-tracking/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-08-13-review-tracking/index.en.html" class="no-external">Review Tracking</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-08-13-review-tracking/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-</div>
-<div class="listing-description">
-<a href="./posts/2024-08-13-review-tracking/index.en.html" class="no-external">In this post I keep track of Journals I have reviewed for, and how often. I’ve started this a bit late, so there are probably some reviews that I have forgotten about, but…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-08-13-review-tracking/index.en.html" class="no-external">
-<div class="listing-date">
-Aug 13, 2024
-</div>
-<div class="listing-reading-time">
-5 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="" data-listing-date-sort="1716127200000" data-listing-file-modified-sort="1716174552616" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="206">
-<div class="thumbnail">
-<p><a href="./posts/2024-05-20-musical-history/index.html" class="no-external"></a></p><a href="./posts/2024-05-20-musical-history/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2024-05-20-musical-history/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2024-05-20-musical-history/index.html" class="no-external">Global musical diversity is largely independent of linguistic and genetic histories</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2024-05-20-musical-history/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2024-05-20-musical-history/index.html" class="no-external">I lead a new paper published at Nature Communications titled “Global musical diversity is largely independent of linguistic and genetic histories”. This paper utilizes data…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2024-05-20-musical-history/index.html" class="no-external">
-<div class="listing-date">
-May 20, 2024
-</div>
-<div class="listing-reading-time">
-2 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="" data-listing-date-sort="1699448400000" data-listing-file-modified-sort="1718519403575" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3950">
-<div class="thumbnail">
-<p><a href="./posts/2023-11-09-understanding-ordinal-models/index.en.html" class="no-external"></a></p><a href="./posts/2023-11-09-understanding-ordinal-models/index.en.html" class="no-external">
-<p class="card-img-top"><img src="posts/2023-11-09-understanding-ordinal-models/index.en_files/figure-html/unnamed-chunk-1-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2023-11-09-understanding-ordinal-models/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-11-09-understanding-ordinal-models/index.en.html" class="no-external">Understanding Ordinal models</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-11-09-understanding-ordinal-models/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2023-11-09-understanding-ordinal-models/index.en.html" class="no-external">In my role at ANU and within ECDI I have started a weekly drop-in session for quantitative and computer programming questions. If you are a student or staff member at ANU…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-11-09-understanding-ordinal-models/index.en.html" class="no-external">
-<div class="listing-date">
-Nov 9, 2023
-</div>
-<div class="listing-reading-time">
-20 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="" data-listing-date-sort="1695736800000" data-listing-file-modified-sort="1718519403570" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="331">
-<div class="thumbnail">
-<p><a href="./posts/2023-09-27-journal-impact-factor-google-scholar/index.en.html" class="no-external"></a></p><a href="./posts/2023-09-27-journal-impact-factor-google-scholar/index.en.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2023-09-27-journal-impact-factor-google-scholar/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-09-27-journal-impact-factor-google-scholar/index.en.html" class="no-external">Journal Impact Factor &amp; Google Scholar</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-09-27-journal-impact-factor-google-scholar/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2023-09-27-journal-impact-factor-google-scholar/index.en.html" class="no-external">I am currently writing a grant, and grant agencies are very interested in Journal Impact Factors (IF). Sometimes this might be explicit, but in this case I just want to flag…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-09-27-journal-impact-factor-google-scholar/index.en.html" class="no-external">
-<div class="listing-date">
-Sep 27, 2023
-</div>
-<div class="listing-reading-time">
-2 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="" data-listing-date-sort="1688911200000" data-listing-file-modified-sort="1699486317241" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="252">
-<div class="thumbnail">
-<p><a href="./posts/2023-08-21-talks-in-shandong-and-korea/index.en.html" class="no-external"></a></p><a href="./posts/2023-08-21-talks-in-shandong-and-korea/index.en.html" class="no-external">
-<p class="card-img-top"><img src="posts/2023-08-21-talks-in-shandong-and-korea/image001.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2023-08-21-talks-in-shandong-and-korea/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-08-21-talks-in-shandong-and-korea/index.en.html" class="no-external">Talks in Shandong and Korea</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-08-21-talks-in-shandong-and-korea/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2023-08-21-talks-in-shandong-and-korea/index.en.html" class="no-external">I recently gave two talks in Shandong, China and in Seoul, Korea (via Zoom).</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-08-21-talks-in-shandong-and-korea/index.en.html" class="no-external">
-<div class="listing-date">
-Jul 10, 2023
-</div>
-<div class="listing-reading-time">
-2 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="" data-listing-date-sort="1688652000000" data-listing-file-modified-sort="1699486317213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="108">
-<div class="thumbnail">
-<p><a href="./posts/2023-07-07-kinbank-a-database-of-kinship-terminology/index.en.html" class="no-external"></a></p><a href="./posts/2023-07-07-kinbank-a-database-of-kinship-terminology/index.en.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2023-07-07-kinbank-a-database-of-kinship-terminology/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-07-07-kinbank-a-database-of-kinship-terminology/index.en.html" class="no-external">Kinbank: A database of Kinship terminology media watch</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-07-07-kinbank-a-database-of-kinship-terminology/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2023-07-07-kinbank-a-database-of-kinship-terminology/index.en.html" class="no-external">I recently published the main output from my PhD - Kinbank. Kinbank is a database of more than 1,200 kinship terminology from languages around the world. This post is a…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-07-07-kinbank-a-database-of-kinship-terminology/index.en.html" class="no-external">
-<div class="listing-date">
-Jul 7, 2023
-</div>
-<div class="listing-reading-time">
-1 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="" data-listing-date-sort="1684159200000" data-listing-file-modified-sort="1699486317211" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1160">
-<div class="thumbnail">
-<p><a href="./posts/2023-05-16-cultural-evolution-society-ace-ecr-awards/index.en.html" class="no-external"></a></p><a href="./posts/2023-05-16-cultural-evolution-society-ace-ecr-awards/index.en.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2023-05-16-cultural-evolution-society-ace-ecr-awards/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-05-16-cultural-evolution-society-ace-ecr-awards/index.en.html" class="no-external">Cultural Evolution Society ACE ECR Awards</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-05-16-cultural-evolution-society-ace-ecr-awards/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2023-05-16-cultural-evolution-society-ace-ecr-awards/index.en.html" class="no-external">I recently applied to the Cultural Evolution Society’s Advancing Cultural Evolution (ACE) grant scheme. I narrowly missed out on the funding, but was listed as an honourable…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-05-16-cultural-evolution-society-ace-ecr-awards/index.en.html" class="no-external">
-<div class="listing-date">
-May 16, 2023
-</div>
-<div class="listing-reading-time">
-6 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="" data-listing-date-sort="1683727200000" data-listing-file-modified-sort="1699486317212" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="217">
-<div class="thumbnail">
-<p><a href="./posts/2023-05-16-dap-workshop/index.en.html" class="no-external"></a></p><a href="./posts/2023-05-16-dap-workshop/index.en.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2023-05-16-dap-workshop/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-05-16-dap-workshop/index.en.html" class="no-external">Data Analysis Plan (DAP) Workshop 2023</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-05-16-dap-workshop/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2023-05-16-dap-workshop/index.en.html" class="no-external">Recently I assisted running the Statistics Bootcamp at the Australian National University. The workshop was organised by the Researcher Development Team and led by A/Prof…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-05-16-dap-workshop/index.en.html" class="no-external">
-<div class="listing-date">
-May 11, 2023
-</div>
-<div class="listing-reading-time">
-2 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="" data-listing-date-sort="1682431200000" data-listing-file-modified-sort="1699486317210" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="299">
-<div class="thumbnail">
-<p><a href="./posts/2023-04-26-abc-canberra-language-diversity-and-endangerment/index.en.html" class="no-external"></a></p><a href="./posts/2023-04-26-abc-canberra-language-diversity-and-endangerment/index.en.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2023-04-26-abc-canberra-language-diversity-and-endangerment/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-04-26-abc-canberra-language-diversity-and-endangerment/index.en.html" class="no-external">ABC Canberra: Language Diversity and Endangerment</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-04-26-abc-canberra-language-diversity-and-endangerment/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2023-04-26-abc-canberra-language-diversity-and-endangerment/index.en.html" class="no-external">On Monday, I gave a short interview on the ABC Canberra Drive show, with Anna Vidot, to talk about language diversity and endangerment on the back of the release of Grambank.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-04-26-abc-canberra-language-diversity-and-endangerment/index.en.html" class="no-external">
-<div class="listing-date">
-Apr 26, 2023
-</div>
-<div class="listing-reading-time">
-2 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-categories="" data-listing-date-sort="1681048800000" data-listing-file-modified-sort="1699486317209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
-<div class="thumbnail">
-<p><a href="./posts/2023-04-10-synapse-seminar/index.en.html" class="no-external"></a></p><a href="./posts/2023-04-10-synapse-seminar/index.en.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2023-04-10-synapse-seminar/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-04-10-synapse-seminar/index.en.html" class="no-external">SYNAPSE seminar</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-04-10-synapse-seminar/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2023-04-10-synapse-seminar/index.en.html" class="no-external">I gave a talk in the Evolution of Cultural Diversity seminar series “SYNAPSE”. The talk is about my research on kinship terminology. I talk about the relationship of kinship…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-04-10-synapse-seminar/index.en.html" class="no-external">
-<div class="listing-date">
-Apr 10, 2023
-</div>
-<div class="listing-reading-time">
-1 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="11" data-listing-date-sort="1677762000000" data-listing-file-modified-sort="1743632929770" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1039">
-<div class="thumbnail">
-<p><a href="./posts/2023-02-10-ancestral-state-reconstruction-with-inla/index.html" class="no-external"></a></p><a href="./posts/2023-02-10-ancestral-state-reconstruction-with-inla/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2023-02-10-ancestral-state-reconstruction-with-inla/index_files/figure-html/unnamed-chunk-6-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2023-02-10-ancestral-state-reconstruction-with-inla/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-02-10-ancestral-state-reconstruction-with-inla/index.html" class="no-external">Ancestral state reconstruction with INLA</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-02-10-ancestral-state-reconstruction-with-inla/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/2023-02-10-ancestral-state-reconstruction-with-inla/index.html" class="no-external">A common task in phylogenetics is ancestral state reconstruction. There are a number of tools to do this inside and outside R. Some noteable R examples are: using ape (which…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-02-10-ancestral-state-reconstruction-with-inla/index.html" class="no-external">
-<div class="listing-date">
-Mar 3, 2023
-</div>
-<div class="listing-reading-time">
-6 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="12" data-categories="" data-listing-date-sort="1676379600000" data-listing-file-modified-sort="1718519403565" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="919">
-<div class="thumbnail">
-<p><a href="./posts/2023-02-15-to-make-a-reference-group-or-to-not-make-a-reference-group-that-is-the-question-this-blog-deals-with/index.en.html" class="no-external"></a></p><a href="./posts/2023-02-15-to-make-a-reference-group-or-to-not-make-a-reference-group-that-is-the-question-this-blog-deals-with/index.en.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2023-02-15-to-make-a-reference-group-or-to-not-make-a-reference-group-that-is-the-question-this-blog-deals-with/index.en.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2023-02-15-to-make-a-reference-group-or-to-not-make-a-reference-group-that-is-the-question-this-blog-deals-with/index.en.html" class="no-external">To make a reference group, or to not make a reference group, that is the question this blog deals with.</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2023-02-15-to-make-a-reference-group-or-to-not-make-a-reference-group-that-is-the-question-this-blog-deals-with/index.en.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2023-02-15-to-make-a-reference-group-or-to-not-make-a-reference-group-that-is-the-question-this-blog-deals-with/index.en.html" class="no-external">When modelling a single categorical variable in linear regression, there are two possibilities. Most commonly, and the default in R, is to estimate the difference between…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2023-02-15-to-make-a-reference-group-or-to-not-make-a-reference-group-that-is-the-question-this-blog-deals-with/index.en.html" class="no-external">
-<div class="listing-date">
-Feb 15, 2023
-</div>
-<div class="listing-reading-time">
-5 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="13" data-categories="" data-listing-date-sort="1674046800000" data-listing-file-modified-sort="1743633030070" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2012">
-<div class="thumbnail">
-<p><a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external"></a></p><a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external">Phylogenetic Signal in INLA</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external">
-
-
-
-</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external">
-<div class="listing-date">
-Jan 19, 2023
-</div>
-<div class="listing-reading-time">
-11 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="14" data-categories="" data-listing-date-sort="1669640400000" data-listing-file-modified-sort="1743632716295" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="459">
-<div class="thumbnail">
-<p><a href="./posts/2022-11-29-the-global-jukebox/index.html" class="no-external"></a></p><a href="./posts/2022-11-29-the-global-jukebox/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/2022-11-29-the-global-jukebox/gjb_injapan.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/2022-11-29-the-global-jukebox/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2022-11-29-the-global-jukebox/index.html" class="no-external">The Global Jukebox</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2022-11-29-the-global-jukebox/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2022-11-29-the-global-jukebox/index.html" class="no-external">Recently, I was a co-author on the release paper for the Global Jukebox dataset (GJB). The GJB is a collection of 5,000+ songs from over 1,000 societies - all available to…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2022-11-29-the-global-jukebox/index.html" class="no-external">
-<div class="listing-date">
-Nov 29, 2022
-</div>
-<div class="listing-reading-time">
-3 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="15" data-categories="" data-listing-date-sort="1665406800000" data-listing-file-modified-sort="1743667438429" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="215">
-<div class="thumbnail">
-<p><a href="./posts/2022-10-11-funding-in-australia-and-new-zealand/index.html" class="no-external"></a></p><a href="./posts/2022-10-11-funding-in-australia-and-new-zealand/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2022-10-11-funding-in-australia-and-new-zealand/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2022-10-11-funding-in-australia-and-new-zealand/index.html" class="no-external">Funding in Australia and New Zealand</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2022-10-11-funding-in-australia-and-new-zealand/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2022-10-11-funding-in-australia-and-new-zealand/index.html" class="no-external">To keep track of the various funding opportunities available to me and that I am interested in, I have created this blog page. I am primarily using it for my own purposes…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2022-10-11-funding-in-australia-and-new-zealand/index.html" class="no-external">
-<div class="listing-date">
-Oct 11, 2022
-</div>
-<div class="listing-reading-time">
-2 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="16" data-categories="" data-listing-date-sort="1657807200000" data-listing-file-modified-sort="1696231998902" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external"></a></p><a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external">Phylogenetic Signal in INLA</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-
-</div>
-<div class="listing-description">
-<a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external">
-
-
-
-</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/2022-07-15-phylogenetic-signal-in-inla/index.html" class="no-external">
-<div class="listing-date">
-Jul 15, 2022
-</div>
-<div class="listing-reading-time">
-1 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="17" data-categories="Opinion" data-listing-date-sort="1583413200000" data-listing-file-modified-sort="1657867019928" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="599">
-<div class="thumbnail">
-<p><a href="./posts/galtons-problem.html" class="no-external"></a></p><a href="./posts/galtons-problem.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/galtons-problem.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/galtons-problem.html" class="no-external">The problem with Galton’s problem</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/galtons-problem.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Opinion'); return false;">
-Opinion
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/galtons-problem.html" class="no-external">We need to talk about “Galton’s Problem”.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/galtons-problem.html" class="no-external">
-<div class="listing-date">
-Mar 6, 2020
-</div>
-<div class="listing-reading-time">
-3 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="18" data-categories="Software" data-listing-date-sort="1559743200000" data-listing-file-modified-sort="1657867019928" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="394">
-<div class="thumbnail">
-<p><a href="./posts/bayestraitr.html" class="no-external"></a></p><a href="./posts/bayestraitr.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/bayestraitr.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/bayestraitr.html" class="no-external">bayestraitr</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/bayestraitr.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Software'); return false;">
-Software
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/bayestraitr.html" class="no-external">I’ve been using BayesTraits for the last year or so, and had developed a package to make it easy to create data for BayesTraits and to read the output into R - called…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/bayestraitr.html" class="no-external">
-<div class="listing-date">
-Jun 6, 2019
-</div>
-<div class="listing-reading-time">
-2 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="19" data-listing-date-sort="1543842000000" data-listing-file-modified-sort="1657867019928" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="45">
-<div class="thumbnail">
-<p><a href="./posts/cultured-scene.html" class="no-external"></a></p><a href="./posts/cultured-scene.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/cultured-scene.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/cultured-scene.html" class="no-external">Cultured Scene</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/cultured-scene.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/cultured-scene.html" class="no-external">Research coverage in Cultured Scene</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/cultured-scene.html" class="no-external">
-<div class="listing-date">
-Dec 4, 2018
-</div>
-<div class="listing-reading-time">
-1 min
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="20" data-listing-date-sort="1523368800000" data-listing-file-modified-sort="1722392208773" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="468">
-<div class="thumbnail">
-<p><a href="./posts/deep-ancestry-news.html" class="no-external"></a></p><a href="./posts/deep-ancestry-news.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/deep-ancestry-news.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/deep-ancestry-news.html" class="no-external">Sookias, Passmore, and Atkinson (2018) - News coverage</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/deep-ancestry-news.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/deep-ancestry-news.html" class="no-external">News coverage of the Sookias, Passmore, and Atkinson paper</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/deep-ancestry-news.html" class="no-external">
-<div class="listing-date">
-Apr 11, 2018
-</div>
-<div class="listing-reading-time">
-3 min
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<ol>
+<li id="fn1"><p>It is also possible to perform no rotations in PCA, but this is not common and varimax is a common default approach. For example, vairmax is the default option in psych::principal<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script>
 
 /* definition of content for the buttons */
