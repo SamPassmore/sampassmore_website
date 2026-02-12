@@ -18,12 +18,13 @@ In this post I keep track of Journals I have reviewed for, and how often. I've s
 | Nature Human Behaviour                        | 1                   |
 | Nature Communications                         | 1                   |
 | PNAS                                          | 1 (as guest editor) |
+| Scientific Reports                            | 1                   |
 | American Anthropologist                       | 1                   |
 | Language and Cognition                        | 1                   |
 | Evolutionary Human Science                    | 2                   |
 | Religion, Brain, and Behaviour                | 1                   |
 | Frontiers Psychology                          | 2                   |
-| Humanities and Social Sciences Communications | 1                   |
+| Humanities and Social Sciences Communications | 2                   |
 | Open Mind                                     | 1                   |
 | CogSci (Conference)                           | 1                   |
 | Lingua                                        | 1                   |
@@ -33,3 +34,4 @@ In this post I keep track of Journals I have reviewed for, and how often. I've s
 | Journal of the Royal Society Interface        | 1                   |
 | Biology and Philosophy                        | 1                   |
 | Scientific Data                               | 1                   |
+
