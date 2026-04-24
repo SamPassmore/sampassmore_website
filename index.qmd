@@ -36,9 +36,9 @@ writeLines(redirects, here::here("_site", "_redirects"))
 
 Hi! I'm Dr Sam Passmore, and you have found my website!  
 
-I am currently a Post-doctoral Research Fellow with the [Evolution of Cultural Diversity Initiative](https://evolutionofculturaldiversity.anu.edu.au/), within the [College of Asia and the Pacific](https://asiapacific.anu.edu.au/), at the [Australian National Univeristy (ANU)](https://www.anu.edu.au/).
+I am currently a Research Fellow at the Australian National University, working within the [HASS Digital Research Hub](hdrh.anu.edu), within the College of Arts and Social Sciences. I am also affiliated with the Evolution of Cultural Diversity Initiative (ECDI) and the Pacific Creoles Project, as part of the College of Asia and the Pacific.
 
-I use quantitative approaches to research anthropological and linguistic questions surrounding kinship, usually through an evolutionary lens. 
+I use quantitative approaches to research anthropological and linguistic questions usually through an evolutionary lens. I am interested in lots of topics, but my primary interest surround (Kinship)[projects/Kinbank], [Language diversity & endangerment](https://direct.mit.edu/opmi/article/doi/10.1162/opmi_a_00199/128777), [modelling cultural history](https://www.cambridge.org/core/journals/evolutionary-human-sciences/article/no-universals-in-the-cultural-evolution-of-kinship-terminology/0BF406C9CFC182F9142749FDD0442471), and slightly more broadly, [the implications of statistical models on our understanding of the world](https://www.tandfonline.com/doi/full/10.1080/2153599X.2021.1991459).  
 
 This website contains [a short bio](about.qmd), [blog posts](posts.qmd), and [descriptions of my various research interests](projects.qmd).
 
