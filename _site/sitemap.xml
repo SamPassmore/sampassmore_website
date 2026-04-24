@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.sampassmore.com/posts.html</loc>
-    <lastmod>2025-07-26T09:44:35.792Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sampassmore.com/posts/bayestraitr.html</loc>
+    <loc>https://www.sampassmore.com/posts/galtons-problem.html</loc>
     <lastmod>2022-07-15T06:36:59.928Z</lastmod>
   </url>
   <url>
-    <loc>https://www.sampassmore.com/posts/2023-07-07-kinbank-a-database-of-kinship-terminology/index.en.html</loc>
-    <lastmod>2023-11-08T23:31:57.213Z</lastmod>
+    <loc>https://www.sampassmore.com/posts/cultured-scene.html</loc>
+    <lastmod>2022-07-15T06:36:59.928Z</lastmod>
   </url>
   <url>
-    <loc>https://www.sampassmore.com/posts/2023-04-10-synapse-seminar/index.en.html</loc>
-    <lastmod>2023-11-08T23:31:57.209Z</lastmod>
+    <loc>https://www.sampassmore.com/posts/2024-08-13-review-tracking/index.en.html</loc>
+    <lastmod>2026-04-24T01:48:08.080Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/2023-08-21-talks-in-shandong-and-korea/index.en.html</loc>
+    <lastmod>2023-11-08T23:31:57.241Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/2023-05-16-dap-workshop/index.en.html</loc>
+    <lastmod>2023-11-08T23:31:57.212Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/2023-04-26-abc-canberra-language-diversity-and-endangerment/index.en.html</loc>
+    <lastmod>2023-11-08T23:31:57.210Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/2022-11-29-the-global-jukebox/index.html</loc>
+    <lastmod>2025-04-02T22:25:16.295Z</lastmod>
   </url>
   <url>
     <loc>https://www.sampassmore.com/posts/2023-11-09-understanding-ordinal-models/index.en.html</loc>
@@ -25,47 +37,79 @@
     <lastmod>2024-06-16T06:30:03.565Z</lastmod>
   </url>
   <url>
-    <loc>https://www.sampassmore.com/posts/2022-10-11-funding-in-australia-and-new-zealand/index.html</loc>
-    <lastmod>2025-04-03T08:03:58.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sampassmore.com/posts/2023-05-16-cultural-evolution-society-ace-ecr-awards/index.en.html</loc>
-    <lastmod>2023-11-08T23:31:57.211Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sampassmore.com/posts/2024-05-20-musical-history/index.html</loc>
-    <lastmod>2024-05-20T03:09:12.616Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sampassmore.com/posts/deep-ancestry-news.html</loc>
-    <lastmod>2024-07-31T02:16:48.773Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sampassmore.com/index.html</loc>
-    <lastmod>2026-04-24T02:01:27.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.sampassmore.com/projects.html</loc>
-    <lastmod>2025-03-30T08:07:36.687Z</lastmod>
+    <loc>https://www.sampassmore.com/posts/2022-07-15-phylogenetic-signal-in-inla/index.html</loc>
+    <lastmod>2025-04-02T22:30:30.070Z</lastmod>
   </url>
   <url>
     <loc>https://www.sampassmore.com/projects/Kinbank/index.html</loc>
     <lastmod>2025-09-30T10:20:12.594Z</lastmod>
   </url>
   <url>
-    <loc>https://www.sampassmore.com/projects/PacificCreoles/index.html</loc>
-    <lastmod>2025-08-09T00:33:17.104Z</lastmod>
+    <loc>https://www.sampassmore.com/projects.html</loc>
+    <lastmod>2025-03-30T08:07:36.687Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/presentations.html</loc>
+    <lastmod>2025-07-01T01:18:59.030Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/index.html</loc>
+    <lastmod>2026-04-24T02:10:20.197Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/about.html</loc>
+    <lastmod>2026-04-24T01:59:28.251Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts.html</loc>
+    <lastmod>2025-07-26T09:44:35.792Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/presentations/2025-presentationtest/index.html</loc>
+    <lastmod>2025-07-01T01:30:57.126Z</lastmod>
   </url>
   <url>
     <loc>https://www.sampassmore.com/projects/GlobalJukeBox/index.html</loc>
     <lastmod>2025-08-10T10:38:44.974Z</lastmod>
   </url>
   <url>
-    <loc>https://www.sampassmore.com/posts/2024-08-13-review-tracking/index.en.html</loc>
-    <lastmod>2026-04-24T01:48:08.080Z</lastmod>
+    <loc>https://www.sampassmore.com/projects/PacificCreoles/index.html</loc>
+    <lastmod>2025-08-09T00:33:17.104Z</lastmod>
   </url>
   <url>
-    <loc>https://www.sampassmore.com/about.html</loc>
-    <lastmod>2026-04-24T01:59:28.251Z</lastmod>
+    <loc>https://www.sampassmore.com/posts/2023-02-10-ancestral-state-reconstruction-with-inla/index.html</loc>
+    <lastmod>2025-04-02T22:28:49.770Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/2023-09-27-journal-impact-factor-google-scholar/index.en.html</loc>
+    <lastmod>2024-06-16T06:30:03.570Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/2022-10-11-funding-in-australia-and-new-zealand/index.html</loc>
+    <lastmod>2025-04-03T08:03:58.429Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/2023-04-10-synapse-seminar/index.en.html</loc>
+    <lastmod>2023-11-08T23:31:57.209Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/2023-05-16-cultural-evolution-society-ace-ecr-awards/index.en.html</loc>
+    <lastmod>2023-11-08T23:31:57.211Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/2023-07-07-kinbank-a-database-of-kinship-terminology/index.en.html</loc>
+    <lastmod>2023-11-08T23:31:57.213Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/2024-05-20-musical-history/index.html</loc>
+    <lastmod>2024-05-20T03:09:12.616Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/bayestraitr.html</loc>
+    <lastmod>2022-07-15T06:36:59.928Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sampassmore.com/posts/deep-ancestry-news.html</loc>
+    <lastmod>2024-07-31T02:16:48.773Z</lastmod>
   </url>
 </urlset>

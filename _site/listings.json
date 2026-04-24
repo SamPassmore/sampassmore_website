@@ -1,5 +1,19 @@
 [
   {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/Kinbank/index.html",
+      "/projects/PacificCreoles/index.html",
+      "/projects/GlobalJukeBox/index.html"
+    ]
+  },
+  {
+    "listing": "/presentations.html",
+    "items": [
+      "/presentations/2025-presentationtest/index.html"
+    ]
+  },
+  {
     "listing": "/posts.html",
     "items": [
       "/posts/2024-08-13-review-tracking/index.en.html",
@@ -17,19 +31,10 @@
       "/posts/2022-07-15-phylogenetic-signal-in-inla/index.html",
       "/posts/2022-11-29-the-global-jukebox/index.html",
       "/posts/2022-10-11-funding-in-australia-and-new-zealand/index.html",
-      "/posts/2022-07-15-phylogenetic-signal-in-inla/index.html",
       "/posts/galtons-problem.html",
       "/posts/bayestraitr.html",
       "/posts/cultured-scene.html",
       "/posts/deep-ancestry-news.html"
-    ]
-  },
-  {
-    "listing": "/projects.html",
-    "items": [
-      "/projects/Kinbank/index.html",
-      "/projects/PacificCreoles/index.html",
-      "/projects/GlobalJukeBox/index.html"
     ]
   }
 ]
