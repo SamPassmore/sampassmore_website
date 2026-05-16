@@ -18,7 +18,7 @@ In this post I keep track of Journals I have reviewed for, and how often. I've s
 | Science                                       | 1                   |
 | Nature Human Behaviour                        | 1                   |
 | Nature Communications                         | 2                   |
-| PNAS                                          | 1 (as guest editor) |
+| PNAS (as guest editor)                        | 1                   |
 | Scientific Reports                            | 1                   |
 | American Anthropologist                       | 1                   |
 | Language and Cognition                        | 1                   |
@@ -35,4 +35,5 @@ In this post I keep track of Journals I have reviewed for, and how often. I've s
 | Journal of the Royal Society Interface        | 1                   |
 | Biology and Philosophy                        | 1                   |
 | Scientific Data                               | 1                   |
+| Oxford University Press                       | 1                   |
 
