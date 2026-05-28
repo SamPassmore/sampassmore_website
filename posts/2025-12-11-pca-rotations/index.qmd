@@ -1,8 +1,14 @@
 ---
 title: "PCA Rotations: What are they"
 author: "Sam Passmore"
+date: '2026-05-29'
+slug: []
+categories: []
+tags: []
+Description: ''
+Tags: [Methods]
+Categories: [Methods]
 editor: visual
-category: methods
 ---
 
 I have been asked a couple of times about the use of rotations in Principal Component Analysis (PCA).
@@ -13,15 +19,15 @@ Each time it is far enough apart that I forget what I said the previous time, so
 Conceptually, PCA commonly is to summarise the latent variation within a dataset.
 That is, when we want to measure something that is not directly accessible, a way around that is to ask a number of questions that are measurable and combine them in a way that reflects the underlying thing we do want to measure.
 
-A PCA aims to do this mathematically by measuring the correlation between all pairs of variables[^1], then creating new variables based on those correlations and weights of the original variables through an approach called eigenvalue decomposition. Variables that are similar weight heavily onto the same principal component, and there can be as many principal components as there are variables.
-
-PCA extracts components; rotations such as varimax are post-hoc steps applied after extraction. Varimax is an orthogonal rotation that seeks to simplify loadings by making large weights larger and small weights smaller while keeping components orthogonal (uncorrelated). This combination prioritizes a simpler structure of the principal components.
+A PCA aims to do this mathematically by measuring the correlation between all pairs of variables[^1], then creating new variables based on those correlations and weights of the original variables through an approach called eigenvalue decomposition.
+Variables that are similar weight heavily onto the same principal component, and there can be as many principal components as there are variables.
 
 [^1]: Technically, correlations can only be used when all variables have been scaled equally.
     If the variables are not scaled, then PCA would more likely use a covariance matrix.
 
-[^2]: It is also possible to perform no rotations in PCA, but this is not common and varimax is a common default approach.
-    For example, varimax is the default option in psych::principal
+PCA extracts components; rotations such as varimax are post-hoc steps applied after extraction.
+Varimax is an orthogonal rotation that seeks to simplify loadings by making large weights larger and small weights smaller while keeping components orthogonal (uncorrelated).
+This combination prioritizes a simpler structure of the principal components.
 
 In most social sciences, assuming that latent variables are uncorrelated is usually a poor assumption.
 Most aspects of human behaviour impact each other in some way, and so we often want to relax this assumption, using alternative rotations, such as Promax (**PRO**jection to **MAX**imise simplicity) and ObliMin (**OBLI**que **MIN**imum).
@@ -109,7 +115,9 @@ However, instead of constraining the correlation between latent variables to zer
 
 ## ObliMin
 
-ObliMin is an oblique rotation (i.e. it relaxes the orthogonality constraint) that directly searches for a simpler loading pattern while allowing factors to correlate. Unlike Promax, which starts from an orthogonal solution and then rotates toward a target, ObliMin directly optimizes a simplicity criterion. In plain terms, that criterion penalizes variables having substantial loadings on more than one factor, so solutions where each variable loads primarily on one factor are favored.
+ObliMin is an oblique rotation (i.e. it relaxes the orthogonality constraint) that directly searches for a simpler loading pattern while allowing factors to correlate.
+Unlike Promax, which starts from an orthogonal solution and then rotates toward a target, ObliMin directly optimizes a simplicity criterion.
+In plain terms, that criterion penalizes variables having substantial loadings on more than one factor, so solutions where each variable loads primarily on one factor are favored.
 
 ```{r, message=FALSE, warning=FALSE}
 # Step 5: ObliMin Rotations
