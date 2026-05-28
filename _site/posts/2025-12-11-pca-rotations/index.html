@@ -195,6 +195,10 @@ cookieconsent.run({
   <li><a href="#promax" id="toc-promax" class="nav-link" data-scroll-target="#promax">ProMax</a></li>
   <li><a href="#oblimin" id="toc-oblimin" class="nav-link" data-scroll-target="#oblimin">ObliMin</a></li>
   </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
+  <ul class="collapse">
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -230,9 +234,10 @@ cookieconsent.run({
 <section id="what-happens-in-a-pca" class="level1">
 <h1>What happens in a PCA</h1>
 <p>Conceptually, PCA commonly is to summarise the latent variation within a dataset. That is, when we want to measure something that is not directly accessible, a way around that is to ask a number of questions that are measurable and combine them in a way that reflects the underlying thing we do want to measure.</p>
-<p>A PCA aims to do this mathematically by measuring the correlation between all pairs of variables, then creating new variables based on those correlations and weights of the original variables through an approach called eigenvalue decomposition. Variables that are similar weight heavily onto the same principle component, and there can one less principle components as there are variables (a.k.a: n - 1). In a standard PCA, which is also described as a varimax rotation<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, there are two complimentary constraints to the calculation of weights, first is that the weights should maximise the amount of variance explained by the principle components and second is that principle components should be orthogonal, or perfectly uncorrelated with each other. Under a varimax rotation, an additional step is to alter the weightings by making large weights bigger, and penalize changes to weights that makes loadings similar across variables. This combination priotizes a simpler structure of the Principal components.</p>
+<p>A PCA aims to do this mathematically by measuring the correlation between all pairs of variables<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, then creating new variables based on those correlations and weights of the original variables through an approach called eigenvalue decomposition. Variables that are similar weight heavily onto the same principal component, and there can be as many principal components as there are variables.</p>
+<p>PCA extracts components; rotations such as varimax are post-hoc steps applied after extraction. Varimax is an orthogonal rotation that seeks to simplify loadings by making large weights larger and small weights smaller while keeping components orthogonal (uncorrelated). This combination prioritizes a simpler structure of the principal components.</p>
 <p>In most social sciences, assuming that latent variables are uncorrelated is usually a poor assumption. Most aspects of human behaviour impact each other in some way, and so we often want to relax this assumption, using alternative rotations, such as Promax (<strong>PRO</strong>jection to <strong>MAX</strong>imise simplicity) and ObliMin (<strong>OBLI</strong>que <strong>MIN</strong>imum). But, often we do not have a good understanding of how these approaches vary or differ in their approach to measuring latent variables. Let us look at this in a simulated example.</p>
-<p>In the simulated example, I start with the end product (two latent factors named <code>F1</code> and <code>F2</code>), then create four variables from these latent factors (<code>V1, V2, V3, V4</code>). F1 and F2 have a 0.2 correlation that I have imposed, which is a low but not negligible relationship between latent variables. I specify the weights so that <code>V1</code> and <code>V2</code> are weighted towards <code>F1</code> (0.8 and 0.7 respectively), and V3 and V4 are weighted towards <code>F2</code> (0.8; 0.7), and add some normally distributed noise to those variables. The variables <code>V1-V4</code> then sit in a data frame <code>df</code> . The correlation matrix between each variable shows us that there is a stronger relationship between V1-2 and V3-4 but there is also some relationship across this divided, which is not an uncommon finding in social datasets.</p>
+<p>In the simulated example, I start with the end product (two latent factors named <code>F1</code> and <code>F2</code>), then create four variables from these latent factors (<code>V1, V2, V3, V4</code>). F1 and F2 have a 0.2 correlation that I have imposed, which is a low but not negligible relationship between latent variables. This is created below with the code: <code>F2 &lt;- 0.2 * F1 + sqrt(1 - 0.2^2) * rnorm(n)</code>, which constructs F2 with approximate correlation 0.2 to F1. I specify the weights so that <code>V1</code> and <code>V2</code> are weighted towards <code>F1</code> (0.8 and 0.7 respectively), and V3 and V4 are weighted towards <code>F2</code> (0.8; 0.7), and add some normally distributed noise to those variables. The variables <code>V1-V4</code> then sit in a data frame <code>df</code>. The correlation matrix between each variable shows us that there is a stronger relationship between V1-2 and V3-4 but there is also some relationship across this divided, which is not an uncommon finding in social datasets.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -243,7 +248,7 @@ cookieconsent.run({
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">200</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>F1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>F2 <span class="ot">&lt;-</span> F1 <span class="sc">*</span> <span class="fl">0.2</span> <span class="sc">+</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span><span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.75</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>F2 <span class="ot">&lt;-</span> F1 <span class="sc">*</span> <span class="fl">0.2</span> <span class="sc">+</span> <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span><span class="sc">^</span><span class="dv">2</span>) <span class="sc">*</span> <span class="fu">rnorm</span>(n)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables mainly loading on one factor</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>V1 <span class="ot">&lt;-</span> <span class="fl">0.8</span><span class="sc">*</span>F1 <span class="sc">+</span> <span class="fl">0.1</span><span class="sc">*</span>F2 <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.2</span>)</span>
@@ -253,41 +258,49 @@ cookieconsent.run({
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(V1, V2, V3, V4)</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">cor</span>(df), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Correlations of Variables:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Correlations of Variables:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">cor</span>(df), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     V1   V2   V3   V4
-V1 1.00 0.92 0.38 0.55
-V2 0.92 1.00 0.49 0.65
-V3 0.38 0.49 1.00 0.87
-V4 0.55 0.65 0.87 1.00</code></pre>
+V1 1.00 0.92 0.34 0.49
+V2 0.92 1.00 0.49 0.62
+V3 0.34 0.49 1.00 0.92
+V4 0.49 0.62 0.92 1.00</code></pre>
 </div>
 </div>
 <p>As mentioned in the description, PCA is based off of a correlation matrix, which is created below in the object <code>R</code>, but you can also put the data frame directly into the function <code>principal</code>. Doing the latter means you will be returned values for each observation in the data frame that reflect the principal components (which is usually what researchers are after).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Compute correlation matrix</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">cor</span>(df)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Factor analysis with 2 factors</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pc_varimax <span class="ot">=</span> psych<span class="sc">::</span><span class="fu">principal</span>(df, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pc_varimax<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Compute correlation matrix</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">cor</span>(df)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Factor analysis with 2 factors</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>pc_varimax <span class="ot">=</span> psych<span class="sc">::</span><span class="fu">principal</span>(df, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Rotated score correlations:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rotated score correlations:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pc_varimax<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Loadings:
-   RC1   RC2  
-V1 0.962 0.210
-V2 0.919 0.344
-V3 0.173 0.963
-V4 0.385 0.891
+   RC2   RC1  
+V1 0.178 0.969
+V2 0.348 0.918
+V3 0.970 0.168
+V4 0.920 0.339
 
-                 RC1   RC2
-SS loadings    1.947 1.883
-Proportion Var 0.487 0.471
-Cumulative Var 0.487 0.957</code></pre>
+                 RC2   RC1
+SS loadings    1.941 1.924
+Proportion Var 0.485 0.481
+Cumulative Var 0.485 0.966</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">=</span> <span class="fu">data.frame</span>(pc_varimax<span class="sc">$</span>scores, F1 , F2)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(plot_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">=</span> <span class="fu">data.frame</span>(pc_varimax<span class="sc">$</span>scores, F1 , F2)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(plot_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -296,84 +309,94 @@ Cumulative Var 0.487 0.957</code></pre>
 </div>
 </div>
 </div>
-<p>Looking at the loadings for the variables on the principle components the loadings are matching up about as well as we could hope. V1 and V2 load heavily onto RC1 and V2 and V4 on RC2.</p>
-<p>are all loaded on <code>PC1</code>, which is not what we think we should see, and that <code>V1-V2</code> and <code>V3-V4</code> are linked to <code>PC2</code> in opposite directions. This is a common outcome for standard/varimax PCA, where the restriction of orthogonality means that variables load onto multiple principle components in a strange and unintuitive way, despite the rotation trying to minimize this possibility. We can see the uncorrelated nature of the variables in the plot below, and a correlation value of ~0. What we can be sure of in this approach is that the principle components are independent latent variables, however, in social and human behavioral research, it is more often that latent factors are related in some way - both conceptually and numerically.</p>
+<p>Looking at the loadings for the variables on the principal components the loadings are matching up about as well as we could hope. V1 and V2 load heavily onto RC1 (RC = rotated component) and V3 and V4 on RC2. It does not capture the relationship between the latent variables however, showing a correlation of 0 for RC1 and RC2, which is a consequence of the orthogonality constraint in varimax rotations. What we can be sure of in this approach is that the principal components are independent latent variables, however, in social and human behavioral research, it is more often that latent factors are related in some way - both conceptually and numerically.</p>
 <p>As such, we can use different rotations that make adjustments to PCA that relax the orthogonality assumption in order to get more interpretable factors. Two common alternative rotations to varimax used in social research is the ProMax and ObliMin rotations.</p>
 <section id="promax" class="level2">
 <h2 class="anchored" data-anchor-id="promax">ProMax</h2>
-<p>Promax is an extention of the varimax rotation, that begins with the varimax output and raises the loadings to a power (in addition to the square-square change performed by varimax) . By raising the loadings to a power, the strong loadings become larger and the weak loadings get closer to zero. The effect of this change is that each variable weights more strongly onto each latent variable, and exaggerates the patterns seen in the latent variable. This more significant change to the loadings also makes the latent components correlated, unlike varimax components.</p>
+<p>Promax is an extension of the varimax rotation, that begins with the varimax output and raises the loadings to a power (in addition to the square-square change performed by varimax) . By raising the loadings to a power, the strong loadings become larger and the weak loadings get closer to zero. The effect of this change is that each variable weights more strongly onto each latent variable, and exaggerates the patterns seen in the latent variable. This more significant change to the loadings also makes the latent components correlated, unlike varimax components.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Promax Rotations</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>pc_promax <span class="ot">=</span> psych<span class="sc">::</span><span class="fu">principal</span>(df, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"promax"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pc_varimax<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Promax Rotations</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>pc_promax <span class="ot">=</span> psych<span class="sc">::</span><span class="fu">principal</span>(df, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"promax"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Rotated score correlations:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rotated score correlations:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pc_promax<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Loadings:
-   RC1   RC2  
-V1 0.962 0.210
-V2 0.919 0.344
-V3 0.173 0.963
-V4 0.385 0.891
+   RC1    RC2   
+V1  1.028 -0.092
+V2  0.922  0.111
+V3 -0.094  1.028
+V4  0.111  0.921
 
                  RC1   RC2
-SS loadings    1.947 1.883
-Proportion Var 0.487 0.471
-Cumulative Var 0.487 0.957</code></pre>
+SS loadings    1.926 1.925
+Proportion Var 0.482 0.481
+Cumulative Var 0.482 0.963</code></pre>
 </div>
-</div>
-<p>The exaggeration of weightings performed by the ProMax rotation sees our variables split across the two principal components in a way that our simulated example might</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">=</span> <span class="fu">data.frame</span>(pc_promax<span class="sc">$</span>scores)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_df, <span class="fu">aes</span>(<span class="at">x =</span> RC1, <span class="at">y =</span> RC2)) <span class="sc">+</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_cor</span>(<span class="at">method =</span> <span class="st">"pearson"</span>, <span class="at">label.x =</span> <span class="fl">1.5</span>, <span class="at">label.y =</span> <span class="fl">3.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">=</span> <span class="fu">data.frame</span>(pc_promax<span class="sc">$</span>scores, F1 , F2)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(plot_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>The exaggeration of weightings performed by the ProMax rotation further emphasises the weighting between principal components, V1-2 are heavily weighted to RC1 and V3-4 onto RC2, as we expect. However, instead of constraining the correlation between latent variables to zero, the Promax approach has over estimated the latent variation between F1 and F2, with a correlation of 0.533 - more than double the size of the correlation that we imposed between the latent factors.</p>
 </section>
 <section id="oblimin" class="level2">
 <h2 class="anchored" data-anchor-id="oblimin">ObliMin</h2>
+<p>ObliMin is an oblique rotation (i.e.&nbsp;it relaxes the orthogonality constraint) that directly searches for a simpler loading pattern while allowing factors to correlate. Unlike Promax, which starts from an orthogonal solution and then rotates toward a target, ObliMin directly optimizes a simplicity criterion. In plain terms, that criterion penalizes variables having substantial loadings on more than one factor, so solutions where each variable loads primarily on one factor are favored.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Promax Rotations</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pc_oblimin <span class="ot">=</span> psych<span class="sc">::</span><span class="fu">principal</span>(df, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"oblimin"</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pc_oblimin<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: ObliMin Rotations</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>pc_oblimin <span class="ot">=</span> psych<span class="sc">::</span><span class="fu">principal</span>(df, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">rotate =</span> <span class="st">"oblimin"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Rotated score correlations:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rotated score correlations:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(pc_oblimin<span class="sc">$</span>loadings, <span class="at">cutoff =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Loadings:
    TC1    TC2   
-V1  1.013 -0.061
-V2  0.926  0.102
-V3 -0.088  1.019
-V4  0.170  0.874
+V1  1.018 -0.075
+V2  0.917  0.125
+V3 -0.076  1.018
+V4  0.126  0.915
 
                  TC1   TC2
-SS loadings    1.921 1.817
-Proportion Var 0.480 0.454
-Cumulative Var 0.480 0.934</code></pre>
+SS loadings    1.899 1.895
+Proportion Var 0.475 0.474
+Cumulative Var 0.475 0.948</code></pre>
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">=</span> <span class="fu">data.frame</span>(pc_oblimin<span class="sc">$</span>scores)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(plot_df, <span class="fu">aes</span>(<span class="at">x =</span> TC1, <span class="at">y =</span> TC2)) <span class="sc">+</span> </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_cor</span>(<span class="at">method =</span> <span class="st">"pearson"</span>, <span class="at">label.x =</span> <span class="fl">1.5</span>, <span class="at">label.y =</span> <span class="fl">3.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">=</span> <span class="fu">data.frame</span>(pc_oblimin<span class="sc">$</span>scores, F1 , F2)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpairs</span>(plot_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Numerically, PCA is derived from a correlation matrix. That is, for each variable you are interested in, calculate how they are correlated to each other and put them into a square matri.</p>
-<p>Assuming that we have a standardized (the mean is zero for all variables) Principle component analysis are derived from the covariance of the variables in the matrix. Let’s take a small example, using data from the R package <a href="https://cran.r-project.org/web/packages/languageR/languageR.pdf">languageR</a>. We are going to use the datatset ‘<em>english</em>’. This data set gives mean visual lexical decision latencies and word naming latencies to 2284 monomorphemic English nouns and verbs, averaged for old and young subjects, with various pre- dictor variables. For each word, there is an average latency value for an Old and Young participant. I choose this datatset only because I see that it has been used for PCA before. Specifically the variables</p>
+<p>The ObliMin results are negligibly better when it comes to the correlation between latent variables, with the correlation between TC1 (transformed component) and TC2 coming in around 0.5 - still more than double our prescribed variation at 0.2. It is also still the case that V1 and V2 are contributing somewhat to TC2 and V3 and V4 to TC1, which might be the numerical cause of the correlation between the latent factors.</p>
+</section>
+</section>
+<section id="summary" class="level1">
+<h1>Summary</h1>
+<p>The point I am trying to make with this post is that, while PCA has been used widely in quantitative approaches to the humanities and social science (HASS), as well as in many other disciplines (e.g.&nbsp;genetics), it is not good at recovering correlated structures between latent variables.</p>
+<p>In the analysis of observed social data, where I have largely worked, it is rarely that case that dimensions of variation are theoretically considered independent - whether that be in <a href="https://www.nature.com/articles/s41467-024-48113-7">music</a> or <a href="https://www.science.org/doi/full/10.1126/sciadv.adg6175">grammar</a> (to cite some places where I have sinned).</p>
+<p>So, while PCA might reveal interesting correlations and weightings among a set of variables, when latent variables from PCA are attributed to real-world concepts, the independence imposed by this method (i.e.&nbsp;varimax rotation) can be at odds with theoretical expectations. If we account for that possibility of correlated latent variation, by using Promax or ObliMin, the simulation here shows that these rotations cannot accurately recover that correlation.</p>
+<p>I do not want to go into the alternatives here, but I think causal graph models (e.g.&nbsp;<a href="https://osf.io/preprints/socarxiv/7utza_v1">used in this paper</a>) offer a more theoretically robust way to test hypotheses of the relationships between observed and latent variables.</p>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<p>Of course, this is a small simulation based on one level of correlation between latent variables. It is possible, perhaps even plausible, that these rotations perform better when correlations between latent variables is much higher, or lower, or negative - all variations that have not been examined here. I welcome any suggestions of resources that might suggest alternatives.</p>
 
 
 </section>
@@ -383,7 +406,7 @@ Cumulative Var 0.480 0.934</code></pre>
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>It is also possible to perform no rotations in PCA, but this is not common and varimax is a common default approach. For example, vairmax is the default option in psych::principal<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Technically, correlations can only be used when all variables have been scaled equally. If the variables are not scaled, then PCA would more likely use a covariance matrix.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script>
