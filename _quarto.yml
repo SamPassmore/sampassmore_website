@@ -42,7 +42,7 @@ website:
   favicon: /files/icon.png 
   google-analytics: "G-63HEHQ31FH"
   cookie-consent: true    
-  search: true
+  search: false
   navbar:
     background: "#99ccff"
     logo: /files/logo.png
