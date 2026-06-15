@@ -26,6 +26,7 @@ execute:
   warning: false #don't include warnings in the output
   output: true #include the results of executing the code
   cache: false # don't cache code junks by default
+  fig-dpi: 96
 description-meta: "Sam Passmore personal website."
 editor: 
   markdown: 
@@ -65,7 +66,9 @@ website:
       [Source at {{< fa brands github >}} GitHub](https://github.com/sampassmore/sampassmore_website)
 format:
   html:
-    include-after-body: files/webex.js    
+    include-after-body:
+      - files/webex.js
+      - files/listing-lazyload.html
     code-fold: false
     #embed-resources: true	
     #self-contained: true

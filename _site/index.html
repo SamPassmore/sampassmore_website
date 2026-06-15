@@ -605,6 +605,11 @@ window.onload = function() {
 }
 
 </script>
+<script>
+document.querySelectorAll('.thumbnail-image').forEach(function(img) {
+  img.loading = 'lazy';
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

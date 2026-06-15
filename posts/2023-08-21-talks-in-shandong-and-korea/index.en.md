@@ -9,6 +9,8 @@ Description: ''
 Tags: []
 Categories: []
 DisableComments: no
+image: thumbnail.jpg
+image-alt: "Talks in Shandong and Korea"
 ---
 
 I recently gave two talks in Shandong, China and in Seoul, Korea (via Zoom). 

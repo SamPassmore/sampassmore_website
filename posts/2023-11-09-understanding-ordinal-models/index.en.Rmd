@@ -10,6 +10,8 @@ Tags: []
 Categories: []
 DisableComments: no
 slug: []
+image: thumbnail.jpg
+image-alt: "Visualisation from Understanding Ordinal Models"
 ---
 
 In my role at ANU and within ECDI I have started a weekly drop-in session for quantitative and computer programming questions. [If you are a student or staff member at ANU, you can check it out here](https://anu365.sharepoint.com/sites/ModelBehaviorworkinggroup/SitePages/Coding-and-Statistics-Clinic.aspx). 

@@ -9,6 +9,8 @@ Description: 'Review of Media attention for GJB'
 Tags: [Publications]
 Categories: [Publications]
 DisableComments: yes
+image: thumbnail.jpg
+image-alt: "The Global Jukebox"
 ---
 
 

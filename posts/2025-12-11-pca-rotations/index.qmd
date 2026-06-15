@@ -8,6 +8,8 @@ tags: []
 Description: ''
 Tags: [Methods]
 Categories: [Methods]
+image: thumbnail.jpg
+image-alt: "PCA rotation visualisation"
 editor: visual
 ---
 

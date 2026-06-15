@@ -372,7 +372,7 @@ window.Quarto = {
 <span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                        1          2        3
-Data Log-odds  -0.7346887 0.10843947 1.109754
+Data Log-odds  -0.7749159 0.06001801 1.037324
 Model Log-odds -0.8409145 0.03934409 1.073441</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Probability comparisons</span></span>
@@ -384,7 +384,7 @@ Model Log-odds -0.8409145 0.03934409 1.073441</code></pre>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            1         2         3
-Data probabilities  0.3241667 0.5270833 0.7520833
+Data probabilities  0.3154167 0.5150000 0.7383333
 Model probabilities 0.3013422 0.5098348 0.7452507</code></pre>
 </div>
 </div>
@@ -399,23 +399,23 @@ Model probabilities 0.3013422 0.5098348 0.7452507</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>$NotJewish
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  1.000   1.000   1.000   1.413   2.000   4.000 
+  1.000   1.000   1.000   1.431   2.000   4.000 
 
 $Jewish
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-   1.00    3.00    3.00    3.38    4.00    4.00 </code></pre>
+  1.000   3.000   4.000   3.432   4.000   4.000 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(df<span class="sc">$</span>familiarity, df<span class="sc">$</span>jewish, table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$NotJewish
 
   1   2   3   4 
-771 364  63   2 
+756 374  67   3 
 
 $Jewish
 
   1   2   3   4 
-  7 123 477 593 </code></pre>
+  1 105 469 625 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Single predictor model</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>b2 <span class="ot">=</span> </span>
@@ -449,7 +449,7 @@ $Jewish
 <span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(raw_data<span class="sc">$</span>NotJewish<span class="sc">$</span>logit_cumprk, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   1    2    3    4 
-0.59 2.86 6.39  Inf </code></pre>
+0.53 2.78 5.99  Inf </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">fixef</span>(b2)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">1</span>], <span class="dv">2</span>) <span class="co"># only looking at the intercepts</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -460,7 +460,7 @@ $Jewish
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(raw_data<span class="sc">$</span>NotJewish<span class="sc">$</span>cum_pr_k, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   1    2    3    4 
-0.64 0.95 1.00 1.00 </code></pre>
+0.63 0.94 1.00 1.00 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">inv_logit_scaled</span>(<span class="fu">fixef</span>(b2)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">1</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -471,7 +471,7 @@ $Jewish
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(raw_data<span class="sc">$</span>Jewish<span class="sc">$</span>logit_cumprk, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    1     2     3     4 
--5.14 -2.11  0.02   Inf </code></pre>
+-7.09 -2.33 -0.08   Inf </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">fixef</span>(b2)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">fixef</span>(b2)[<span class="dv">4</span>,<span class="dv">1</span>], <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -482,7 +482,7 @@ $Jewish
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(raw_data<span class="sc">$</span>Jewish<span class="sc">$</span>cum_pr_k, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   1    2    3    4 
-0.01 0.11 0.51 1.00 </code></pre>
+0.00 0.09 0.48 1.00 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">inv_logit_scaled</span>(<span class="fu">fixef</span>(b2)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">fixef</span>(b2)[<span class="dv">4</span>,<span class="dv">1</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -625,18 +625,18 @@ countryAustralian -0.5445326 0.08023831 -0.69960194 -0.3896266</code></pre>
 <span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>clm_marginal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>jewish = NotJewish:
- familiarity    prob       SE  df asymp.LCL asymp.UCL
- 1           0.63984 0.013800 Inf   0.61279    0.6669
- 2           0.31136 0.012900 Inf   0.28600    0.3367
- 3           0.04308 0.005030 Inf   0.03322    0.0529
- 4           0.00571 0.000859 Inf   0.00403    0.0074
+ familiarity    prob      SE  df asymp.LCL asymp.UCL
+ 1           0.62663 0.01380 Inf   0.59949   0.65378
+ 2           0.32296 0.01310 Inf   0.29726   0.34865
+ 3           0.04521 0.00528 Inf   0.03486   0.05556
+ 4           0.00520 0.00081 Inf   0.00361   0.00679
 
 jewish = Jewish:
- familiarity    prob       SE  df asymp.LCL asymp.UCL
- 1           0.01043 0.001520 Inf   0.00745    0.0134
- 2           0.09401 0.007800 Inf   0.07872    0.1093
- 3           0.40236 0.013900 Inf   0.37521    0.4295
- 4           0.49320 0.014400 Inf   0.46506    0.5213
+ familiarity    prob      SE  df asymp.LCL asymp.UCL
+ 1           0.00808 0.00124 Inf   0.00566   0.01050
+ 2           0.07726 0.00711 Inf   0.06332   0.09119
+ 3           0.39404 0.01380 Inf   0.36709   0.42100
+ 4           0.52062 0.01430 Inf   0.49268   0.54855
 
 Results are averaged over the levels of: country 
 Confidence level used: 0.95 </code></pre>
@@ -663,7 +663,7 @@ NotJewish.Australian.2|3    Jewish.Australian.2|3   NotJewish.American.3|4
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>clm_marginal<span class="sc">@</span>bhat <span class="sc">*</span> clm_marginal<span class="sc">@</span>linfct[<span class="dv">1</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  NotJewish.American.1|2      Jewish.American.1|2 NotJewish.Australian.1|2 
-               0.2979237                0.0000000                0.3419199 
+               0.2800050                0.0000000                0.3466264 
    Jewish.Australian.1|2   NotJewish.American.2|3      Jewish.American.2|3 
                0.0000000                0.0000000                0.0000000 
 NotJewish.Australian.2|3    Jewish.Australian.2|3   NotJewish.American.3|4 
@@ -673,7 +673,7 @@ NotJewish.Australian.2|3    Jewish.Australian.2|3   NotJewish.American.3|4
 </div>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(clm_marginal<span class="sc">@</span>bhat <span class="sc">*</span> clm_marginal<span class="sc">@</span>linfct[<span class="dv">1</span>,])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6398436</code></pre>
+<pre><code>[1] 0.6266313</code></pre>
 </div>
 </div>
 <p>The 0.5 might be confusing, but it is just a faster way of getting the average. We could code all states we are interested in as 1, then divide the summed result by two to get the same result.</p>
@@ -682,7 +682,7 @@ NotJewish.Australian.2|3    Jewish.Australian.2|3   NotJewish.American.3|4
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(clm_marginal<span class="sc">@</span>bhat <span class="sc">*</span> as_one) <span class="sc">/</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6398436</code></pre>
+<pre><code>[1] 0.6266313</code></pre>
 </div>
 </div>
 <p>A final point, is that because we only estimate three thresholds, but there are four categories, the fourth category is just the remainder of the first three. See below:</p>
@@ -690,12 +690,12 @@ NotJewish.Australian.2|3    Jewish.Australian.2|3   NotJewish.American.3|4
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if we calculate the probability for level 4 as we do everything else we get a negative value</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(clm_marginal<span class="sc">@</span>bhat <span class="sc">*</span> clm_marginal<span class="sc">@</span>linfct[<span class="dv">4</span>,])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.9942876</code></pre>
+<pre><code>[1] -0.9947998</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># But the remainder is what we a really after:</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="fu">sum</span>(clm_marginal<span class="sc">@</span>bhat <span class="sc">*</span> clm_marginal<span class="sc">@</span>linfct[<span class="dv">4</span>,])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.005712429</code></pre>
+<pre><code>[1] 0.005200166</code></pre>
 </div>
 </div>
 <p>To get an understanding of the effect of being Jewish, averaged over country, we can take the ratios between the probabilities to understand how more or less likely an individual from each group is to know. word. For example, in response 2 (have heard, don’t understand) the probability for a Not Jewish person is 0.31, and the probability for a Jewish person is 0.07.</p>
@@ -1212,6 +1212,9 @@ window.onload = function() {
 }
 
 </script>
+document.querySelectorAll('.thumbnail-image').forEach(function(img) {
+  img.loading = 'lazy';
+});
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
