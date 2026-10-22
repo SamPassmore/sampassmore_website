@@ -14,9 +14,7 @@ DisableComments: no
 In this post I keep track of Journals I have reviewed for, and how often. I've started this a bit late, so there are probably some reviews that I have forgotten about, but I'll try to keep it up to date!
 
 
-| Journal                                       | Papers              |
-|-----------------------------------------------|---------------------|
-| Total                                         | 29                  |
+| Journal (Total)                               | Papers (30)         |
 |-----------------------------------------------|---------------------|
 | American Anthropologist                       | 1                   |
 | Anthropos                                     | 1                   |
@@ -24,6 +22,7 @@ In this post I keep track of Journals I have reviewed for, and how often. I've s
 | CogSci (Conference)                           | 1                   |
 | Evolutionary Human Science                    | 2                   |
 | Frontiers Psychology                          | 2                   |
+| Genealogy                                     | 1                   |
 | Gruyter De Mouton-Brill                       | 1                   |
 | Humanities and Social Sciences Communications | 2                   |
 | Journal of Language, Identity & Education     | 1                   |
@@ -41,3 +40,4 @@ In this post I keep track of Journals I have reviewed for, and how often. I've s
 | Science                                       | 1                   |
 | Scientific Data                               | 1                   |
 | Scientific Reports                            | 1                   |
+
